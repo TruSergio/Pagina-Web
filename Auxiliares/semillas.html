@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Garantizar correcta escala en apps móviles-->
     <title>Jardignomo - Tu asistente de Jardín Inteligente</title>
-    <link rel="stylesheet" href="/Styles/index.css"> <!--Sección (index)-->
-    <link rel="stylesheet" href="/Styles/Auxiliares/semillas.css"> <!--Sección interna (semillas)-->
+    <link rel="stylesheet" href="Styles/index.css"> <!--Sección (index)-->
+    <link rel="stylesheet" href="Styles/Auxiliares/semillas.css"> <!--Sección interna (semillas)-->
 
 </head>
 <body>
     <!--CONTENEDOR LOGOS, NAVBAR-MENÚ E INICIAR SESIÓN/REGÍSTRATE-->
     <header>
         <div class="logo-container_uno">
-            <div><img id="Logo1" src="/Imagenes/index/LOGO PRODUCT.png" alt="Logo"></div>
+            <div><img id="Logo1" src="Imagenes/index/LOGO PRODUCT.png" alt="Logo"></div>
         </div>
 
         <!--Botón de menú hamburguesa-->
@@ -21,20 +21,20 @@
         </div>
         
         <ul class="navbar"> <!--<ul> es una lista que contendrá elementos <li> -->
-            <li><a href="/index.html">Inicio</a></li> <!-- Cada elemento de la lista es un botón de navegación -->
-            <li><a href="/tienda.html">Tienda</a></li>
-            <li><a href="/guias">Guías</a></li>
-            <li><a href="/soporte.html">Soporte</a></li>
-            <li><a href="/contactanos.html">Contáctanos</a></li>
+            <li><a href="index.html">Inicio</a></li> <!-- Cada elemento de la lista es un botón de navegación -->
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="guias">Guías</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+            <li><a href="contactanos.html">Contáctanos</a></li>
         </ul>
 
         <div class="button-container">
-            <a href="/iniciar_sesion.html"><button>Iniciar Sesión</button></a>
-            <a href="/registrate.html"><button id="Fijo">Regístrate</button></a>
+            <a href="iniciar_sesion.html"><button>Iniciar Sesión</button></a>
+            <a href="registrate.html"><button id="Fijo">Regístrate</button></a>
         </div>  
     
         <div class="logo-container_dos">
-            <div><img id="Logo2" src="/Imagenes/index/LOGO EMPRESA.png" alt="Logo"></div>
+            <div><img id="Logo2" src="Imagenes/index/LOGO EMPRESA.png" alt="Logo"></div>
         </div>
     </header>
 
@@ -42,11 +42,11 @@
 <!--NAVBAR-MENÚ FUERA DEL <header> --Útil para visualizar su despliegue de las Secciones en dispositivos móviles-->
     <ul class="navbar_fueraheader"> <!--<ul> es una lista que contendrá elementos <li> -->
         <!--Usuario tiene posibilidad de elegir dar click en área de fondo-color ó en palabra Inicio/Tienda/Guías/Contáctanos-->
-        <li class="fondoInicio" onclick="redirect('/index.html')"><a href="/index.html">Inicio</a></li>
-        <li class="fondoTienda" onclick="redirect('/tienda.html')"><a href="/tienda.html">Tienda</a></li>
-        <li class="fondoGuias" onclick="redirect('/guias.html')"><a href="/guias.html">Guías</a></li>
-        <li class="fondoSoporte" onclick="redirect('/soporte.html')"><a href="/soporte.html">Soporte</a></li>
-        <li class="fondoContactanos" onclick="redirect('/contactanos.html')"><a href="/contactanos.html">Contáctanos</a></li>
+        <li class="fondoInicio" onclick="redirect('index.html')"><a href="index.html">Inicio</a></li>
+        <li class="fondoTienda" onclick="redirect('tienda.html')"><a href="tienda.html">Tienda</a></li>
+        <li class="fondoGuias" onclick="redirect('guias.html')"><a href="guias.html">Guías</a></li>
+        <li class="fondoSoporte" onclick="redirect('soporte.html')"><a href="soporte.html">Soporte</a></li>
+        <li class="fondoContactanos" onclick="redirect('contactanos.html')"><a href="contactanos.html">Contáctanos</a></li>
     </ul>
     <!--JS para dirigir a usuario a tal Sección cuando haga click en su respectivo "fondo"-->
     <script>
@@ -81,13 +81,13 @@
 <!--(1) CONTENEDOR DE "CARRITO Y BARRA DE BÚSQUEDA"-->
 
 <div class="carro-search-container">
-    <a href="/registrate.html"> <!--Ruta a dirigir cuando se de click en la imagen del carro-->
-        <div><img id="aspectCarro" src="/Imagenes/tienda/carro.png" alt="Carro"></div>
+    <a href="registrate.html"> <!--Ruta a dirigir cuando se de click en la imagen del carro-->
+        <div><img id="aspectCarro" src="Imagenes/tienda/carro.png" alt="Carro"></div>
     </a>
     <div><p>Añade al carrito</p></div>
     
     <!--Formulario (barra de búsqueda)-->
-    <form action="/search"> <!--Ruta a dirigir cuando se presione 'Buscar'-->
+    <form action="search"> <!--Ruta a dirigir cuando se presione 'Buscar'-->
       <input type="text" name="q" placeholder="¿Qué buscas?"> <!--Espacio-entrada de texto input-->
       <input type="submit" value="Buscar"> <!--Espacio para dar click "Buscar"-->
     </form>
@@ -109,8 +109,8 @@
     <div class="contenedor-general">
         <!--CONTENEDOR 1-->
         <div class="contenedor">
-            <a href="/Auxiliares/Semillas/zapote.html">
-                <img src="/Imagenes/Auxiliares/Semillas/zapote.png" alt="Producto 1">
+            <a href="Auxiliares/Semillas/zapote.html">
+                <img src="Imagenes/Auxiliares/Semillas/zapote.png" alt="Producto 1">
                 <div class="descripcion">
                     <p>ZAPOTE COSTEÑO (SEMILLA)</p>
                 </div>
@@ -118,8 +118,8 @@
         </div>
         <!--CONTENEDOR 2-->
         <div class="contenedor">
-            <a href="/Auxiliares/Semillas/papaya.html">
-                <img src="/Imagenes/Auxiliares/Semillas/papaya.png" alt="Producto 2">
+            <a href="Auxiliares/Semillas/papaya.html">
+                <img src="Imagenes/Auxiliares/Semillas/papaya.png" alt="Producto 2">
                 <div class="descripcion">
                     <p>PAPAYA MARADOL X 100 SEMILLAS</p>
                 </div>
@@ -127,8 +127,8 @@
         </div>
         <!--CONTENEDOR 3-->
         <div class="contenedor">
-            <a href="/Auxiliares/Semillas/guanabana.html">
-                <img src="/Imagenes/Auxiliares/Semillas/guanabana.jpg" alt="Producto 3">
+            <a href="Auxiliares/Semillas/guanabana.html">
+                <img src="Imagenes/Auxiliares/Semillas/guanabana.jpg" alt="Producto 3">
                 <div class="descripcion">
                     <p>GUANABANA GIGANTE (SEMILLA)</p>
                 </div>
@@ -136,8 +136,8 @@
         </div>
         <!--CONTENEDOR 4-->
         <div class="contenedor">
-            <a href="/Auxiliares/Semillas/granadilla.html">
-                <img src="/Imagenes/Auxiliares/Semillas/granadilla.jpg" alt="Producto 4">
+            <a href="Auxiliares/Semillas/granadilla.html">
+                <img src="Imagenes/Auxiliares/Semillas/granadilla.jpg" alt="Producto 4">
                 <div class="descripcion">
                     <p>GRANADILLA (SEMILLA)</p>
                 </div>
@@ -145,8 +145,8 @@
         </div>
         <!--CONTENEDOR 5-->
         <div class="contenedor">
-            <a href="/Auxiliares/Semillas/anon.html">
-                <img src="/Imagenes/Auxiliares/Semillas/anon.jpg" alt="Producto 5">
+            <a href="Auxiliares/Semillas/anon.html">
+                <img src="Imagenes/Auxiliares/Semillas/anon.jpg" alt="Producto 5">
                 <div class="descripcion">
                     <p>ANÓN (SEMILLA)</p>
                 </div>
@@ -154,8 +154,8 @@
         </div>
         <!--CONTENEDOR 6-->
         <div class="contenedor">
-            <a href="/Auxiliares/Semillas/mora.html">
-                <img src="/Imagenes/Auxiliares/Semillas/mora.png" alt="Producto 6">
+            <a href="Auxiliares/Semillas/mora.html">
+                <img src="Imagenes/Auxiliares/Semillas/mora.png" alt="Producto 6">
                 <div class="descripcion">
                     <p>MORA DE CASTILLA (SEMILLA)</p>
                 </div>
@@ -163,8 +163,8 @@
         </div>
         <!--CONTENEDOR 7-->
         <div class="contenedor">
-            <a href="/Auxiliares/Semillas/uchuva.html">
-                <img src="/Imagenes/Auxiliares/Semillas/uchuva.png" alt="Producto 7">
+            <a href="Auxiliares/Semillas/uchuva.html">
+                <img src="Imagenes/Auxiliares/Semillas/uchuva.png" alt="Producto 7">
                 <div class="descripcion">
                     <p>UCHUVA (SEMILLA)</p>
                 </div>
@@ -172,8 +172,8 @@
         </div>
         <!--CONTENEDOR 8-->
         <div class="contenedor">
-            <a href="/Auxiliares/Semillas/guayaba.html">
-                <img src="/Imagenes/Auxiliares/Semillas/guayaba.png" alt="Producto 8">
+            <a href="Auxiliares/Semillas/guayaba.html">
+                <img src="Imagenes/Auxiliares/Semillas/guayaba.png" alt="Producto 8">
                 <div class="descripcion">
                     <p>GUAYABA ROJA (SEMILLA)</p>
                 </div>
@@ -181,8 +181,8 @@
         </div>
         <!--CONTENEDOR 9-->
         <div class="contenedor">
-            <a href="/Auxiliares/Semillas/aguacate.html">
-                <img src="/Imagenes/Auxiliares/Semillas/aguacate.png" alt="Producto 9">
+            <a href="Auxiliares/Semillas/aguacate.html">
+                <img src="Imagenes/Auxiliares/Semillas/aguacate.png" alt="Producto 9">
                 <div class="descripcion">
                     <p>AGUACATE (SEMILLA)</p>
                 </div>
@@ -190,8 +190,8 @@
         </div>
         <!--CONTENEDOR 10-->
         <div class="contenedor">
-            <a href="/Auxiliares/Semillas/curuba.html">
-                <img src="/Imagenes/Auxiliares/Semillas/curuba.png" alt="Producto 10">
+            <a href="Auxiliares/Semillas/curuba.html">
+                <img src="Imagenes/Auxiliares/Semillas/curuba.png" alt="Producto 10">
                 <div class="descripcion">
                     <p>CURUBA (SEMILLA)</p>
                 </div>
@@ -199,8 +199,8 @@
         </div>
         <!--CONTENEDOR 11-->
         <div class="contenedor">
-            <a href="/Auxiliares/Semillas/tomate-arbol-amarillo.html">
-                <img src="/Imagenes/Auxiliares/Semillas/tomatearbol.png" alt="Producto 11">
+            <a href="Auxiliares/Semillas/tomate-arbol-amarillo.html">
+                <img src="Imagenes/Auxiliares/Semillas/tomatearbol.png" alt="Producto 11">
                 <div class="descripcion">
                     <p>TOMATE DE ÁRBOL AMARILLO (SEMILLA)</p>
                 </div>
@@ -208,8 +208,8 @@
         </div>
         <!--CONTENEDOR 12-->
         <div class="contenedor">
-            <a href="/Auxiliares/Semillas/tomate-cherry-zebra.html">
-                <img src="/Imagenes/Auxiliares/Semillas/zebra.png" alt="Producto 12">
+            <a href="Auxiliares/Semillas/tomate-cherry-zebra.html">
+                <img src="Imagenes/Auxiliares/Semillas/zebra.png" alt="Producto 12">
                 <div class="descripcion">
                     <p>TOMATE CHERRY ZEBRA (SEMILLA)</p>
                 </div>
