@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Garantizar correcta escala en apps móviles-->
     <title>Jardignomo - Tu asistente de Jardín Inteligente</title>
-    <link rel="stylesheet" href="Styles/index.css"> <!--Sección (index)-->
-    <link rel="stylesheet" href="Styles/Auxiliares/herramientas.css"> <!--Sección interna (herramientas)-->
+    <link rel="stylesheet" href="../Styles/index.css"> <!--Sección (index)-->
+    <link rel="stylesheet" href="../Styles/Auxiliares/herramientas.css"> <!--Sección interna (herramientas)-->
 
 </head>
 <body>
     <!--CONTENEDOR LOGOS, NAVBAR-MENÚ E INICIAR SESIÓN/REGÍSTRATE-->
     <header>
         <div class="logo-container_uno">
-            <div><img id="Logo1" src="Imagenes/index/LOGO PRODUCT.png" alt="Logo"></div>
+            <div><img id="Logo1" src="../Imagenes/index/LOGO PRODUCT.png" alt="Logo"></div>
         </div>
 
         <!--Botón de menú hamburguesa-->
@@ -21,20 +21,20 @@
         </div>
         
         <ul class="navbar"> <!--<ul> es una lista que contendrá elementos <li> -->
-            <li><a href="index.html">Inicio</a></li> <!-- Cada elemento de la lista es un botón de navegación -->
-            <li><a href="tienda.html">Tienda</a></li>
-            <li><a href="guias">Guías</a></li>
-            <li><a href="soporte.html">Soporte</a></li>
-            <li><a href="contactanos.html">Contáctanos</a></li>
+            <li><a href="../index.html">Inicio</a></li> <!-- Cada elemento de la lista es un botón de navegación -->
+            <li><a href="../tienda.html">Tienda</a></li>
+            <li><a href="../guias">Guías</a></li>
+            <li><a href="../soporte.html">Soporte</a></li>
+            <li><a href="../contactanos.html">Contáctanos</a></li>
         </ul>
 
         <div class="button-container">
-            <a href="iniciar_sesion.html"><button>Iniciar Sesión</button></a>
-            <a href="registrate.html"><button id="Fijo">Regístrate</button></a>
+            <a href="../iniciar_sesion.html"><button>Iniciar Sesión</button></a>
+            <a href="../registrate.html"><button id="Fijo">Regístrate</button></a>
         </div>  
     
         <div class="logo-container_dos">
-            <div><img id="Logo2" src="5Imagenes/index/LOGO EMPRESA.png" alt="Logo"></div>
+            <div><img id="Logo2" src="../Imagenes/index/LOGO EMPRESA.png" alt="Logo"></div>
         </div>
     </header>
 
@@ -42,11 +42,11 @@
 <!--NAVBAR-MENÚ FUERA DEL <header> --Útil para visualizar su despliegue de las Secciones en dispositivos móviles-->
     <ul class="navbar_fueraheader"> <!--<ul> es una lista que contendrá elementos <li> -->
         <!--Usuario tiene posibilidad de elegir dar click en área de fondo-color ó en palabra Inicio/Tienda/Guías/Contáctanos-->
-        <li class="fondoInicio" onclick="redirect('index.html')"><a href="index.html">Inicio</a></li>
-        <li class="fondoTienda" onclick="redirect('tienda.html')"><a href="tienda.html">Tienda</a></li>
-        <li class="fondoGuias" onclick="redirect('guias.html')"><a href="guias.html">Guías</a></li>
-        <li class="fondoSoporte" onclick="redirect('soporte.html')"><a href="soporte.html">Soporte</a></li>
-        <li class="fondoContactanos" onclick="redirect('contactanos.html')"><a href="contactanos.html">Contáctanos</a></li>
+        <li class="fondoInicio" onclick="redirect('../index.html')"><a href="../index.html">Inicio</a></li>
+        <li class="fondoTienda" onclick="redirect('../tienda.html')"><a href="../tienda.html">Tienda</a></li>
+        <li class="fondoGuias" onclick="redirect('../guias.html')"><a href="../guias.html">Guías</a></li>
+        <li class="fondoSoporte" onclick="redirect('../soporte.html')"><a href="../soporte.html">Soporte</a></li>
+        <li class="fondoContactanos" onclick="redirect('../contactanos.html')"><a href="../contactanos.html">Contáctanos</a></li>
     </ul>
     <!--JS para dirigir a usuario a tal Sección cuando haga click en su respectivo "fondo"-->
     <script>
