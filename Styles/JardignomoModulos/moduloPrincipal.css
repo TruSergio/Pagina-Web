@@ -1,0 +1,184 @@
+/*____________SECCIÓN INTERNA "MÓDULO PRINCIPAL"_____________*/
+
+/*Botón de menú hamburguesa*/
+.hamburguesa-container{
+    display: none; /* Inicialmente oculta el icono del botón-menú para escritorio, más abajo tendrá mediaQueryes y aparecerá para dispositivos móviles*/
+}
+  
+/*Menú desplegable navbar_fueraheader */
+.navbar_fueraheader{
+    display: none; /* Inicialmente oculta menú para escritorio, más abajo tendrá mediaQueryes y aparecerá para dispositivos móviles*/
+}
+
+
+/*ESTRUCTURA SECCIÓN TIENDA (encabezado)*/
+
+/* (1) CONTENEDOR DE ELEMENTO div ("CARRITO Y BARRA DE BÚSQUEDA")*/
+/*Dimensiones de imagen carro*/
+#aspectCarro{
+    height: 70px;
+    cursor: pointer;
+}
+/*Texto "Añade al carrito"*/
+.carro-search-container p{
+    display: flex;
+    margin: 0px -535px; /*Espacio externo arriba-abajo 0px y derecha-izquierda -535px*/
+    font-size: 15px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /*'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;*/
+}
+/* Fondo con animación (PARPADEO IMAGEN CARRITO)*/
+#aspectCarro {
+    background-color: #eee; /* Fondo original */
+    animation: parpadeo 3s infinite; /* Animación de parpadeo */
+}
+
+/* Definir la animación */
+@keyframes parpadeo {
+    
+    0%{
+        background-color: #05937275;
+    }
+    100% {
+        background-color: #0593720d;
+    }
+}
+/*Barra de búsqueda y carrito*/
+.carro-search-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 36%; /*Espacio entre elementos*/
+    margin: 0px 0px; /*Margen externa*/
+    background-color: #eee;
+}
+/*Espacio Formulario (barra de búsqueda): entre espacio-entrada de texto y el espacio para dar click "Buscar"*/
+.carro-search-container form {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+/*Espacio-entrada de texto input "¿Qué buscas?"*/
+.carro-search-container input[type="text"] {
+    border: 1px solid #000; /*Borde de espacio-entrada de texto*/
+    padding: 0.4rem; /*Margen interna de la entrada de texto*/
+    font-size: 1rem; /*Tamaño de la entrada de texto*/
+    font-size: 15px; font-family: Tahoma, sans-serif;
+}
+/*Espacio para dar click submit "Buscar"*/
+.carro-search-container input[type="submit"] {
+    background-color: #000;
+    color: #fff; /*Color del texto "Buscar"*/
+    border: none; /*Que no tenga borde el input submit*/
+    padding: 0.5rem 10px; /*Margen interna arriba-abajo 0.5rem y derecha-izquierda 10px*/
+    font-size: 1rem; /*Tamaño input submit*/
+    cursor: pointer;
+    font-size: 15px; font-family: Tahoma, sans-serif;
+}
+
+/*ESTRUCTURA SECCIÓN INTERNA "MÓDULO PRINCIPAL"*/
+/* (2) CONTENEDOR PARA EL FONDO*/
+.fondo-adicional {
+    background-color: #eee; /* Color de fondo adicional */
+    padding: 10px; /* Espaciado interno del fondo adicional */
+}
+/*(3) CONTENEDOR DE ELEMENTO div (CONTENEDOR DE TITULO "MÓDULO PRINCIPAL")*/
+/*Posición título*/
+#titulo1{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin: 5px 25px; /*Margen externa*/
+    margin-bottom: 30px; /*Margen externa desde parte inferior*/
+    font-size: 50px; font-family: Tahoma, sans-serif;
+}
+/*(4) CONTENEDOR PADRE: IMAGEN MÓDULO PRINCIPAL Y CONCEPTO DEL MISMO*/
+/*TAMAÑO CONTENEDOR IMAGEN MÓDULO PRINCIPAL*/
+#moduloPrincipal{
+    height: 460px;
+    border-radius: 20px;
+}
+/*POSICIÓN-CONTENEDOR DE ELEMENTO div ("IMAGEN MÓDULO PRINCIPAL")*/
+.imagen-moduloPrincipal{
+    display: flex;
+    align-items: center; /* Alineación vertical al centro */
+    padding: 10px; /* Margen interna */
+}
+/*POSICIÓN-CONTENEDOR DE ELEMENTO div ("CONCEPTO DEL "MÓDULO PRINCIPAL" y "ESPECIFICACIONES TÉCNICAS")*/
+.concepto-moduloPrincipal{
+    display: flex;
+    flex-direction: column; /* Cambia la dirección del flujo a columna */
+    justify-content: center;
+    align-items:flex-start; /* Alineación vertical al centro */
+    padding: 0px; /* Margen interna */
+    font-size: 17px; font-family: 'Cambria', sans-serif;
+    text-align: justify; /* Justificar el texto al borde (alinearlo-como lo haría en Word)*/
+    line-height: 1.5;
+}
+/*Color de los subtitulos"*/
+.subtitulo{
+    color: #9089cc;
+    font-weight: 700; /*Tamaño-grosor del texto*/
+}
+/*CONTENEDOR PADRE: envuelve la imagen y el texto-concepto*/
+.moduloPrincipal-and-concepto{
+    display: flex;
+    justify-content: space-between; /* Alineación horizontal al espacio entre los elementos */
+    margin: 0px 200px; /* Margen externo del contenedor 0px arriba y abajo, 230px izquierda y derecha */
+    gap: 65px; /*Distancia entre texto e imagen*/
+    margin-bottom: 15px; /*Margen externa desde parte inferior*/
+}
+
+/*(5) CONTENEDOR "BOTON SUMA/RESTA"*/
+.botones-suma-resta {
+    display:flex;
+    align-items: center;
+    margin: 0px 0px;
+    background-color: #fff;
+}
+.botones-suma-resta button {
+    background-color: green;
+    color: white;
+    font-size: 27px;
+    margin: 0px 10px;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#contador{
+display: flex;
+margin: 0px 7px;
+}
+/*(6) CONTENEDOR TEXTO*/
+.texto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0px;
+    text-align:justify;
+    font-size: 20px;
+}
+
+/* CONTENEDOR INFO PAGO */
+.infopago{
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alineación vertical al centro */
+    padding: 0px; /* Margen interna */
+    font-size: 17px; font-family: 'Cambria', sans-serif;
+    font-weight: 500; /*Texto en negrita*/
+    text-align: justify; /* Justificar el texto al borde (alinearlo-como lo haría en Word)*/
+}
+/*CONTENEDOR IMAGEN*/
+#medios{
+    height: 330px;
+}
+/* (7) CONTENEDOR PADRE: envuelve la imagen y el texto-concepto del Producto */
+.infopago-and-imagenmedios-container {
+    display: flex;
+    justify-content: space-between; /* Alineación horizontal al espacio entre los elementos */
+    flex-direction: row-reverse;
+    margin: 35px 130px; /* Margen externo del contenedor 0px arriba y abajo, 60px izquierda y derecha */
+    gap: 70px; /*Distancia entre texto e imagen*/
+    margin-top: 80px;
+}

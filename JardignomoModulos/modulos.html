@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Garantizar correcta escala en apps móviles-->
+    <title>Jardignomo - Tu asistente de Jardín Inteligente</title>
+    <link rel="stylesheet" href="/Styles/index.css"> <!--Sección (index)-->
+    <link rel="stylesheet" href="/Styles/JardignomoModulos/modulos.css"> <!--Sección (modulos)-->
+</head>
+<body>
+    <!--CONTENEDOR LOGOS, NAVBAR-MENÚ E INICIAR SESIÓN/REGÍSTRATE-->
+    <header>
+        <div class="logo-container_uno">
+            <div><img id="Logo1" src="/Imagenes/index/LOGO PRODUCT.png" alt="Logo"></div>
+        </div>
+
+        <!--Botón de menú hamburguesa-->
+        <div class="hamburguesa-container">
+            <button class="hamburguesa-icon" onclick="despliegueMenu()">&#9776;</button> <!--onclick servirá para hacer visible el despliegue (con JS)-->
+        </div>
+        
+        <ul class="navbar"> <!--<ul> es una lista que contendrá elementos <li> -->
+            <li><a href="/index.html">Inicio</a></li> <!-- Cada elemento de la lista es un botón de navegación -->
+            <li><a href="/tienda.html">Tienda</a></li>
+            <li><a href="/guias.html">Guías</a></li>
+            <li><a href="/soporte.html">Soporte</a></li>
+            <li><a href="/contactanos.html">Contáctanos</a></li>
+        </ul>
+
+        <div class="button-container">
+            <a href="/iniciar_sesion.html"><button>Iniciar Sesión</button></a>
+            <a href="/registrate.html"><button id="Fijo">Regístrate</button></a>
+        </div>  
+    
+        <div class="logo-container_dos">
+            <div><img id="Logo2" src="/Imagenes/index/LOGO EMPRESA.png" alt="Logo"></div>
+        </div>
+    </header>
+
+
+<!--NAVBAR-MENÚ FUERA DEL <header> --Útil para visualizar su despliegue de las Secciones en dispositivos móviles-->
+    <ul class="navbar_fueraheader"> <!--<ul> es una lista que contendrá elementos <li> -->
+        <!--Usuario tiene posibilidad de elegir dar click en área de fondo-color ó en palabra Inicio/Tienda/Guías/Contáctanos-->
+        <li class="fondoInicio" onclick="redirect('/index.html')"><a href="/index.html">Inicio</a></li>
+        <li class="fondoTienda" onclick="redirect('/tienda.html')"><a href="/tienda.html">Tienda</a></li>
+        <li class="fondoGuias" onclick="redirect('/guias.html')"><a href="/guias.html">Guías</a></li>
+        <li class="fondoSoporte" onclick="redirect('/soporte.html')"><a href="/soporte.html">Soporte</a></li>
+        <li class="fondoContactanos" onclick="redirect('/contactanos.html')"><a href="/contactanos.html">Contáctanos</a></li>
+    </ul>
+    <!--JS para dirigir a usuario a tal Sección cuando haga click en su respectivo "fondo"-->
+    <script>
+    // Definición de la función redirect con un parámetro (destino) --> !!!!!!!!OJO Debo definir cada una function redirect(respectivaSección)
+    function redirect(indexhtml) {
+        // Utiliza window.location.href para redirigir al usuario a la ubicación especificada
+        window.location.href = indexhtml;
+        }
+        function redirect(tiendahtml){
+            window.location.href = tiendahtml;
+        }
+        function redirect(guiashtml){
+            window.location.href = guiashtml;
+        }
+        function redirect(soportehtml){
+            window.location.href = soportehtml;
+        }
+        function redirect(contactanoshtml){
+            window.location.href = contactanoshtml;
+        }
+        </script>
+    
+    <!--JS para desplegar el navbar-menú al dar click en botón menú hamburguesa-->  
+    <script>
+    function despliegueMenu() {
+        var navbar = document.querySelector('.navbar_fueraheader');
+        navbar.style.display = (navbar.style.display === 'none' || navbar.style.display === '') ? 'block' : 'none';
+        }
+        </script>
+
+
+<!--(1) CONTENEDOR DE "CARRITO Y BARRA DE BÚSQUEDA"-->
+
+<div class="carro-search-container">
+    <a href="registrate.html"> <!--Ruta a dirigir cuando se de click en la imagen del carro-->
+        <div><img id="aspectCarro" src="/Imagenes/tienda/carro.png" alt="Carro"></div>
+    </a>
+    <div><p>Añade al carrito</p></div>
+    
+    <!--Formulario (barra de búsqueda)-->
+    <form action="/search"> <!--Ruta a dirigir cuando se presione 'Buscar'-->
+      <input type="text" name="q" placeholder="¿Qué buscas?"> <!--Espacio-entrada de texto input-->
+      <input type="submit" value="Buscar"> <!--Espacio para dar click "Buscar"-->
+    </form>
+</div>
+
+<!-- (2) CONTENEDOR PARA EL FONDO-->
+<div class="fondo-adicional">
+    <!--(3) CONTENEDOR DE TITULO "MÓDULOS DE JARDIGNOMO"-->
+    <div class="titulosPadre-container">
+        <h1 id="titulo1">Módulos de Jardignomo</h1>
+    </div>
+    <!--(3) CONTENEDOR DE SUBTÍTULOS "MÓDULO PRINCIPAL" y "MÓDULO SECUNDARIO"-->
+    <div class="subtitulosPadre-container">
+        <h3 id="subtitulo1">Módulo Principal</h3>
+        <h3 id="subtitulo2">Módulo Secundario</h3>
+    </div>
+    <!--(4) CONTENEDOR IMÁGENES "MÓDULO PRINCIPAL" y "MÓDULO SECUNDARIO" -->
+    <div class="imagenesPadre-container">
+        <div class="imagen-container">
+            <a href="moduloPrincipal.html">
+                <img id="moduloPrincipal" src="/Imagenes/JardignomoModulos/modulos/principal.png" alt="izquierda">
+                <span class="imagen-texto"><b>Microprocesador ESP32 DevKit C-1</b><br><br>¿Qué función tiene en tu Jardignomo?</span>
+            </a>
+        </div>
+        <div class="imagen-container">
+            <a href="moduloSecundario.html">
+                <img id="moduloSecundario" src="/Imagenes/JardignomoModulos/modulos/secundario.png" alt="derecha">
+                <span class="imagen-texto"><b>Microprocesador ESP8266 Mini D1</b><br><br>¿Qué función tiene en tu Jardignomo?</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!--FOOTER (PIE DE PÁGINA) FINAL-->
+<footer>
+    <p>&copy; 2023 EkoTek. Todos los derechos reservados. EkoTek y Jardignomo son marcas comerciales, marcas de servicios o marcas registradas de EkoTek.</p>
+</footer>
+
+</body>
+</html>

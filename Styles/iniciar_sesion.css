@@ -1,0 +1,307 @@
+/*____________SECCIÓN "INICIAR SESIÓN"_____________*/
+
+/* Estilos específicos para la página iniciar_sesion.html */
+body.iniciar-sesion .button-container a:first-child {
+  display: none; /* Oculta el botón "Iniciar Sesión" */
+}
+
+/*Botón de menú hamburguesa*/
+.hamburguesa-container{
+  display: none; /* Inicialmente oculta el icono del botón-menú para escritorio, más abajo tendrá mediaQueryes y aparecerá para dispositivos móviles*/
+}
+
+/*Menú desplegable navbar_fueraheader */
+.navbar_fueraheader{
+  display: none; /* Inicialmente oculta menú para escritorio, más abajo tendrá mediaQueryes y aparecerá para dispositivos móviles*/
+}
+
+
+/*Fuente importada de Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/*Vbles de colores que utilizaré (root--raíz, es decir, para todo el body del doc)*/
+:root{
+  --login-bg:#f8f3ff; /*fondo*/
+  --title-bg:#9089cc; /*fondo texto*/
+  --button-bg:#674baf; /*fondo botón*/
+  --light-green:#047056; /*fondo links*/
+  --image-bg:#eadbff; /*fondo imagen*/
+}
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
+/*ESTRUCTURA SECCIÓN INICIAR SESIÓN*/
+/*POSICIÓN-CONTENEDOR DE ELEMENTO div ("CONTENEDOR GRAL")*/
+.login-container{
+  min-height: 40em;/*100em*/
+  width: 70em;
+  margin: 6em auto;/*Margen externa del contenedor 6em arriba y abajo, auto izquierda y derecha (centrado)*/
+  display: flex; /*Para poder mover elementos del contenedor*/
+  justify-content: space-between; /*Mismo espacio entre elementos (se vayan hacia los bordes)*/
+  border-radius: 25px;
+  overflow: hidden; /*Porque se tiene una imagen-contenedor y una info-contenedor encima del contenedor gral, por ello se oculta el desbordamiento*/
+}
+/*POSICIÓN-CONTENEDOR DE ELEMENTO div ("CONTENEDOR INFO")*/
+.login-info-container{
+  width: 50%;
+  display: flex;
+  flex-direction: column; /*Dirección de elementos en columna*/
+  align-items: center; /*Alineación elementos*/
+  text-align: center; /*Alineación texto*/
+  padding-top: 0.5rem; /*Separar texto del borde del contenedor*/
+  background-color: var(--login-bg); /*Llamo un fondo (:root) para contenedor info*/
+}
+/*POSICIÓN-CONTENEDOR DE ELEMENTO img ("IMG")*/
+.image-container{
+  width: 50%; /*Así, los dos contenedores (info e imagen) ocuparán cada uno la mitad*/
+  padding: 0rem; /*Margen interna*/
+  background-color: var(--image-bg); /*Llamo un fondo (:root) para contenedor img*/
+  opacity: 0.5;
+  filter: blur(4px); /*Efecto img borrosa*/
+  box-sizing: border-box; /*Dimensionamiento de borde de caja (respetar padding). Para que el contenido se ajuste conforme a contenedor info */
+}
+/*POSICIÓN-CONTENEDOR DE ELEMENTO h1 ("CONTENEDOR TITULO")*/
+.title{
+  text-transform: capitalize; /*Primeras letras mayus*/
+  font-size: 2.25rem;
+  font-weight: 600;
+  letter-spacing: 1px;/*Espacio entre letras*/
+  color:var(--title-bg); /*Llamo un fondo (:root) para contenedor title*/
+}
+/*POSICIÓN-CONTENEDOR DE ELEMENTO div ("CONTENEDOR PARA INICIAR SESION CON GOOGLE Y FACE")*/
+.social-login{
+  width: 100%;
+  display: flex; /*Uno al lado del otro*/
+  justify-content: space-evenly; /*(Igual espacio): Para que ambos elementos compartan el espacio entre ellos*/
+}
+/*POSICIÓN-CONTENEDOR DE ELEMENTOS div ("CONTENEDORES GOOGLE Y FACE")*/
+.social-login-element{
+  width: 12.5rem;
+  height: 3.75rem;
+  font-size: 1.2rem;
+  font-weight: 700; /*Peso de fuente-grosor*/
+  letter-spacing: 0.5px;/*Espacio entre letras*/
+  display: flex;
+  justify-content: center; /*Horizontal alineación elementos div al centro*/
+  align-items: center; /*Vertical alineación elementos div al centro*/
+  /*Aspecto de botones (borde)*/
+  border-radius: 5px;
+  border: 1px solid var(--button-bg); /*Llamo un fondo (:root) para contenedores Google y Face*/
+}
+/*Selecciono img (para modificar su tamaño)*/
+.social-login-element img{
+  width: 1.875rem;
+  height: 1.875rem;
+  position: relative;
+  top: 0;
+  left: -0.625rem; /*Separar iconos de texto*/
+}
+/*Efecto hover (AL PASAR EL CURSOR SOBRE GOOGLE Y FACE)*/
+.social-login-element:hover{
+  background-color: #fff;
+  cursor: pointer;
+}
+/*POSICIÓN DE ELEMENTO p ("HIJO DE CONTENEDOR PARA INICIAR SESION CON GOOGLE Y FACE")*/
+.login-info-container > p{
+  font-size: 1.25rem; /*Tamaño letra*/
+  margin-top: 1.5em; /*Espaciado superior*/
+}
+/* POSICIÓN CONTENEDOR DE ELEMENTO form ("CONTENEDOR ESPACIOS DEL FORMULARIO") */
+.inputs-container{
+  height: 55%;
+  width: 85%;
+  display: flex; /*Alinación uno al lado del otro...*/
+  flex-direction: column; /*Pero quiero alineación de espacios-elementos form en columna*/
+  justify-content: space-around; /*Mismo espacio alrededor de elementos form*/
+  align-items: center;
+}
+/*Trabajo <inputs> (elementos form) de class "input", y <button> Iniciar Sesión de clase "btn"*/
+.input, .btn{
+  width: 90%;
+  height: 3.125rem;
+  font-size: 1em; /*Tamaño letra*/
+}
+/*Trabajo <inputs> (elementos form) de class "input"*/
+.input{
+  padding-left: 20px;/*Margen interna (separate del margen del contenedor!)*/
+  border: none; /*No quiero margen...*/
+  border-radius: 6px; /*Pero si curvas estilizadas*/
+  font-weight: 600; /*Peso de fuente-grosor*/
+  box-sizing: border-box; /*Dimensionamiento de borde de caja (respetar padding)*/
+}
+/*Efecto hover (AL PASAR EL CURSOR SOBRE GOOGLE Y FACE CAMBIE COLOR LOS INPUTS)*/
+.input:hover{
+  border: 2px solid var(--button-bg); /*Llamo un fondo (:root) para contenedor input*/
+}
+/*Trabajo <button> Iniciar Sesión de clase "btn"*/
+.btn{
+  width: 80%;
+  letter-spacing: 1px;/*Espacio entre letras*/
+  text-transform: uppercase; /*Pone todas las letras en mayus*/
+  color: #fff;
+  border-radius: 6px;
+  background-color: var(--button-bg); /*Llamo un fondo (:root) para contenedor btn*/
+  transition: 1s;
+}
+/*Efecto hover (AL PASAR EL CURSOR SOBRE BOTÓN INICIAR SESIÓN)*/
+.btn:hover{
+  background-color: #a9a8a8;
+  cursor: pointer;
+}
+/*POSICIÓN DE ELEMENTOS p ("HIJOS DE CONTENEDOR ESPACIOS DEL FORMULARIO")*/
+.inputs-container p{
+  margin: 0px; /*Margen externa*/
+}
+/*Trabajo <span> respectivos, y su enlace <a>*/
+.span a{
+  color: var(--light-green); /*Llamo un fondo (:root) para elemento span*/
+  font-weight: 600; /*Peso de fuente-grosor*/
+  text-decoration: none; /*Elimino subrayado de enlace*/
+}
+
+
+/* FORM RESPONSIVE mediaQueryes para dispositivos móviles*/
+/*PRIMER BREAK POINT: A partir de los 1140px del ancho wiewport, hacia abajo*/
+@media screen and (max-width: 1140px){
+  /*Desaparezca la imagen*/
+  .image-container{
+    display: none;
+  }
+  .login-container{
+    width: 70%; /*Ancho máximo para replegar doc (responsive)*/
+    margin-top: 10rem; /*Todos los elementos tengan una margen externa desde su borde*/
+  }
+  /*Quiero que el contenedor info ocupe todo el ancho del contenedor gral "login-container"*/
+  .login-info-container{
+    width: 100%; /*Ocupa todo el ancho*/
+  }
+}
+
+/*SEGUNDO BREAK POINT: A partir de los 642px del ancho wiewport, hacia abajo*/
+@media screen and (max-width: 642px){
+  /*Que contenedor gral sea un poco más grande "login-container"*/
+  .login-container{
+    width: 90%;
+  }
+}
+
+/*TERCER BREAK POINT: A partir de los 480px del ancho wiewport, hacia abajo*/
+@media  screen and (max-width: 480px){
+  /*Altura Contenedor gral "login-container"*/
+  .login-container{
+    height: 90%;
+  }
+  /*Dirección Contenedores para iniciar sesión con Google y Face "social-login"*/
+  .social-login{
+    flex-direction: column; /*Dirección de elementos en columna*/
+    align-items: center;
+    height: 30%;
+  }
+  /*Altura Párrafo p Contenedor info "login-info-container"*/
+  .login-info-container > p{
+    margin: 0;
+  }
+}
+
+/*INICIAR SESIÓN Y REGÍSTRATE mediaQueryes para dispositivos móviles*/
+/*CUARTO BREAK POINT (MENÚ HAMBURGUESA): A partir de los 885px del ancho wiewport, hacia abajo*/
+@media  screen and (max-width: 885px){
+  /*Posición Contenedor botón menú hamburguesa "hamburguesa-container"*/
+  .hamburguesa-container{
+    width: 5%;  /*Ancho del elemento en el contenedor*/
+    margin: 0 auto; /* Centra el contenedor */
+    box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+    display: flex;
+    justify-content: center;
+  }
+  /*Diseño del Contenedor "hamburguesa-container"*/
+  .hamburguesa-container button{
+    padding: 5px 10px; /* Espaciado interno del botón */
+    border: none; /* Elimina el borde del botón predeterminado */
+    border-radius: 5px; /* Borde redondo */
+    background-color: transparent; /* Color de fondo */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.6s; /* Agrega una transición suave al color de fondo */
+  }
+  /* Efecto cambia color al pasar el cursor por botón */
+  .hamburguesa-container:hover button {
+    background-color: #0593726c; /* Color de fondo al pasar el cursor */
+  }
+  /*Tamaño del botón (ícono), del Contenedor "hamburguesa-container"*/
+  .hamburguesa-icon{
+    font-size: 20px; /*Propiedad adecuada para fuente de íconos*/
+  }
+  /*Diseño del Contenedor PADRE navbar_fueraheader*/
+  .navbar_fueraheader{
+    display: block; /*(Puedo mover) a nivel de bloque*/
+    align-items: center;
+    max-height: 50px; /*max altura del navbar_fueraheader*/
+    padding-bottom: 60px; /*Margen interna - altura desde parte inferior*/
+    
+  }
+  /*CONTENEDOR INDIVIDUAL Fondo Inicio <li>*/
+  .fondoInicio { 
+    background-color: #e0e0e05c; /*#674baf5e;*/
+    cursor: pointer;
+    transition: background-color 2s; /* Ajusta la duración de la transición */
+  }
+  /*Efecto cambio de color Fondo Inicio <li> al pasar el cursor por encima */
+  .fondoInicio:hover {
+    background-color: #57235497; /*#35265cc6*/
+  }
+  /*CONTENEDOR INDIVIDUAL Fondo Tienda <li>*/
+  .fondoTienda { 
+    background-color: #e0e0e05c; /*#674baf5e;*/
+    cursor: pointer;
+    transition: background-color 2s; /* Ajusta la duración de la transición */
+  }
+  /*Efecto cambio de color Fondo Tienda <li> al pasar el cursor por encima */
+  .fondoTienda:hover {
+    background-color: #57235497; /*#35265cc6*/
+  }
+  /*CONTENEDOR INDIVIDUAL Fondo Guías <li>*/
+  .fondoGuias { 
+    background-color: #e0e0e05c; /*#674baf5e;*/
+    cursor: pointer;
+    transition: background-color 2s; /* Ajusta la duración de la transición */
+  }
+  /*Efecto cambio de color Fondo Guías <li> al pasar el cursor por encima */
+  .fondoGuias:hover {
+    background-color: #57235497; /*#35265cc6*/
+  }
+  /*CONTENEDOR INDIVIDUAL Fondo Soporte <li>*/
+  .fondoSoporte { 
+    background-color: #e0e0e05c; /*#674baf5e;*/
+    cursor: pointer;
+    transition: background-color 2s; /* Ajusta la duración de la transición */
+  }
+  /*Efecto cambio de color Fondo Guías <li> al pasar el cursor por encima */
+  .fondoSoporte:hover {
+    background-color: #57235497; /*#35265cc6*/
+  }
+  /*CONTENEDOR INDIVIDUAL Fondo Contáctanos <li>*/
+  .fondoContactanos { 
+    background-color: #e0e0e05c; /*#674baf5e;*/
+    cursor: pointer;
+    transition: background-color 2s; /* Ajusta la duración de la transición */
+  }
+  /*Efecto cambio de color Fondo Contactanos <li> al pasar el cursor por encima */
+  .fondoContactanos:hover {
+    background-color: #57235497; /*#35265cc6*/
+  }
+  /*Posición de los botones del Contenedor "navbar_fueraheader"*/
+  .navbar_fueraheader li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6px -45px; /*Margen externa. / derecha -40px*/
+    padding: 11px;
+  }
+  /*Trabajando con el texto*/
+  .navbar_fueraheader li a{
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    font-weight: bold; /* Texto en negrita */
+    color: #fff; /* Color del texto */
+  }
+}

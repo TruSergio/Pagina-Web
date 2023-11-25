@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Garantizar correcta escala en apps móviles-->
+    <title>Jardignomo - Tu asistente de Jardín Inteligente</title>
+    <link rel="stylesheet" href="/Styles/index.css"> <!--Sección (index)-->
+</head>
+<body>
+    <!--CONTENEDOR LOGOS, NAVBAR-MENÚ E INICIAR SESIÓN/REGÍSTRATE-->
+    <header>
+        <div class="logo-container_uno">
+            <div><img id="Logo1" src="/Imagenes/index/LOGO PRODUCT.png" alt="Logo"></div>
+        </div>
+
+        <!--Botón de menú hamburguesa-->
+        <div class="hamburguesa-container">
+            <button class="hamburguesa-icon" onclick="despliegueMenu()">&#9776;</button> <!--onclick servirá para hacer visible el despliegue (con JS)-->
+        </div>
+        
+        <ul class="navbar"> <!--<ul> es una lista que contendrá elementos <li> -->
+            <li><a href="index.html">Inicio</a></li> <!-- Cada elemento de la lista es un botón de navegación -->
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="guias.html">Guías</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+            <li><a href="contactanos.html">Contáctanos</a></li>
+        </ul>
+
+        <div class="button-container">
+            <a href="iniciar_sesion.html"><button>Iniciar Sesión</button></a>
+            <a href="registrate.html"><button id="Fijo">Regístrate</button></a>
+        </div>  
+    
+        <div class="logo-container_dos">
+            <div><img id="Logo2" src="/Imagenes/index/LOGO EMPRESA.png" alt="Logo"></div>
+        </div>
+    </header>
+
+
+
+<!--NAVBAR-MENÚ FUERA DEL <header> --Útil para visualizar su despliegue de las Secciones en dispositivos móviles-->
+    <ul class="navbar_fueraheader"> <!--<ul> es una lista que contendrá elementos <li> -->
+        <!--Usuario tiene posibilidad de elegir dar click en área de fondo-color ó en palabra Inicio/Tienda/Guías/Contáctanos-->
+        <li class="fondoInicio" onclick="redirect('index.html')"><a href="index.html">Inicio</a></li>
+        <li class="fondoTienda" onclick="redirect('tienda.html')"><a href="tienda.html">Tienda</a></li>
+        <li class="fondoGuias" onclick="redirect('guias.html')"><a href="guias.html">Guías</a></li>
+        <li class="fondoSoporte" onclick="redirect('soporte.html')"><a href="soporte.html">Soporte</a></li>
+        <li class="fondoContactanos" onclick="redirect('contactanos.html')"><a href="contactanos.html">Contáctanos</a></li>
+    </ul>
+    <!--JS para dirigir a usuario a tal Sección cuando haga click en su respectivo "fondo"-->
+    <script>
+    // Definición de la función redirect con un parámetro (destino) --> !!!!!!!!OJO Debo definir cada una function redirect(respectivaSección)
+    function redirect(indexhtml) {
+        // Utiliza window.location.href para redirigir al usuario a la ubicación especificada
+        window.location.href = indexhtml;
+        }
+        function redirect(tiendahtml){
+            window.location.href = tiendahtml;
+        }
+        function redirect(guiashtml){
+            window.location.href = guiashtml;
+        }
+        function redirect(soportehtml){
+            window.location.href = soportehtml;
+        }
+        function redirect(contactanoshtml){
+            window.location.href = contactanoshtml;
+        }
+        </script>
+    
+    <!--JS para desplegar el navbar-menú al dar click en botón menú hamburguesa-->  
+    <script>
+    function despliegueMenu() {
+        var navbar = document.querySelector('.navbar_fueraheader');
+        navbar.style.display = (navbar.style.display === 'none' || navbar.style.display === '') ? 'block' : 'none';
+        }
+        </script>
+
+
+
+    <!--VIDEO PROMOCIONAL (REPRODUCCIÓN AUTOMÁTICA CICLO CONTÍNUO)-->
+    <video id="Video" style="width: 100%; height: auto;" autoplay muted> <!--El atributo 'autoplay muted' asegura que el video se reproduzca silenciado, lo que generalmente es más aceptable para los navegadores y usuarios-->
+        <!--Garantizar compatibilidad con navegadores (2 formatos)-->
+        <!--source src="/videos/Jardignomo Video.mp4" type="video/mp4"-->
+        <source src="/videos/Jardignomo-Video.webm" type="video/webm">
+        Tu navegador no soporta el formato de video. <!--se mostrará en navegadores que no pueden reproducir ninguno de los formatos especificados-->
+    </video>
+    
+      <script>
+        // Obtengo referencia al elemento de video (id)
+        const video = document.getElementById("Video");
+        
+        //Función para reiniciar el video cuando termina
+        function reiniciarVideo() {
+            video.currentTime = 0;
+            video.play();
+        }
+
+        // Espera a que el video esté cargado
+        video.addEventListener("loadedmetadata", function() {
+          // Reproduce el video automáticamente
+          video.play();
+        });
+
+        // Cuando el video llega al final, llamar a la función para reiniciar
+        video.addEventListener("ended", reiniciarVideo);
+      </script>
+
+    <!--EFECTO STICKY NAVIGATION BAR (MENÚ)-->
+    <script>
+        window.addEventListener("scroll", function() {
+            const header = document.querySelector("header");
+            if (window.pageYOffset > 0) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        });
+    </script>
+
+
+<!--IMAGEN HOJA DE FONDO (INDIVIDUALES PARA VARIAR SU TAMAÑO Y ROTACIÓN) *Se distribuirán a lo largo del body del doc-->
+<div class="primerHoja">
+    <div><img id="hojaFondo_1" src="/Imagenes/index/hojaFondo.png" alt="hoja_1"></div>
+</div>
+<div class="segundaHoja">
+    <div><img id="hojaFondo_2" src="/Imagenes/index/hojaFondo.png" alt="hoja_2"></div>
+</div>
+
+
+<!--TÍTULO 1 PRESENTACIÓN PRODUCTO-->
+<div class="titulo1">
+    <h1>Te presentamos el asistente de jardín inteligente <span class="brillo">Jardignomo</span></h1> <!--efecto brillo, elemento <span>-->
+</div>
+
+<div class="tercerHoja">
+    <div><img id="hojaFondo_3" src="/Imagenes/index/hojaFondo.png" alt="hoja_3"></div>
+</div>
+
+
+<!--(1) CONTENEDOR PADRE: IMAGEN PRODUCTO Y CONCEPTO DEL MISMO-->
+<div class="product-and-concept-container">
+    <!-- CONTENEDOR IMAGEN PRODUCTO JARDIGNOMO -->
+    <div class="product-container">
+        <div><img id="Product" src="/Imagenes/index/Jardignomo.jpeg" alt="img_uno"></div>
+        <div class="cuartaHoja">
+            <div><img id="hojaFondo_4" src="/Imagenes/index/hojaFondo.png" alt="hoja_4"></div>
+        </div>
+    </div>
+    <div class="sextaHoja">
+        <div><img id="hojaFondo_6" src="/Imagenes/index/hojaFondo.png" alt="hoja_6"></div>
+    </div>
+    <!-- CONTENEDOR CONCEPTO DEL JARDIGNOMO -->
+    <div class="concepto-producto">
+        <p> Dispositivo de monitoreo vía wifi personalizable, con alerta incorporada de
+            mantenimiento y notificaciones contextuales en app móvil. <br><br> ¡Te dice las condiciones ambientales de tu planta!</p>
+    </div>
+</div>
+
+
+<!--SLIDER AUTOMÁTICO CARRUSEL IMÁGENES-->
+<div class="container">
+    <div class="slider">
+        <!--<input> creo los botones de parte inferior-->
+        <input type="radio" name="slider" id="slideUno" checked> <!--checked es selección-->
+        <input type="radio" name="slider" id="slideDos">
+        <input type="radio" name="slider" id="slideTres">
+
+        <!--Creo etiquetas(labels) que se conectarán a los id de botones-->
+        <div class="buttons">
+            <label for="slideUno"></label>
+            <label for="slideDos"></label>
+            <label for="slideTres"></label>
+        </div>
+
+        <!--Creo el contenido del carrusel (lo que irá en cada botón)-->
+        <div class="content">
+            <div class="primerSlide">
+                <img src="/Imagenes/index/sensor1.png" alt="Slide 1">
+                <p>¡Jardignomo posee un sensor capacitivo<br>para que identifiques <span class="color_Sensor1">qué humedad <br>tiene el suelo de tu planta!</span></p> <!--Etiqueta <span> para color de palabras-->
+            </div>
+            <div class="segundoSlide">
+                <img src="/Imagenes/index/sensor2.png" alt="Slide 2">
+                <p>¿Quieres saber a qué temperatura<br>y humedad se expone tu planta?<br> <br>¡Jardignomo dispone de un sensor de<br><span class="color_Sensor2">humedad y temperatura ambiental DHT-22!</span></p>
+            </div>
+            <div class="tercerSlide">
+                <img src="/Imagenes/index/sensor3.png" alt="Slide 3">
+                <p>Fotoresistor, ¡para que la batería de tu Jardignomo<br>sea <span class="color_Sensor3">amigable con el medio ambiente!</span><br><br>No te preocupes por tener que recargarlo.</p>
+            </div>
+            
+        </div>
+        <div class="quintaHoja">
+            <div><img id="hojaFondo_5" src="/Imagenes/index/hojaFondo.png" alt="hoja_5"></div>
+        </div>     
+    </div>
+    <!-- Contenedor Flecha izquierda y contenedor Flecha derecha -->
+        <!--Evento 'onclick' que llama a función "prevSlide()"" cuando se haga click-->
+            <!--&#8249 ENTIDAD html que representa el símbolo de flecha mayor o menor que-->
+    <div class="flecha left" onclick="prevSlide()">&#8249;</div> 
+    <!-- Contenedor Flecha derecha -->
+    <div class="flecha right" onclick="nextSlide()">&#8250;</div>
+</div>
+
+<!-- JS CARRUSEL MANUAL Y AUTO, para cambiar los Slides-imgs del Carrusel al hacer clic en las flechas -->
+<script>
+    // Variables para el carrusel automático
+    var slideInterval; // Variable para almacenar el intervalo del carrusel automático
+    var currentSlide = 1; //Variable para almacenar el número de la imagen actual (empieza desde el primer slide) 
+
+    // Iniciar el carrusel automático al cargar la página
+    startSlideShow(); // Llama a la función para iniciar el carrusel automático
+
+    // Función para iniciar el carrusel automático (nunca se detendrá)
+    function startSlideShow() {
+        slideInterval = setInterval(nextSlide, 8000); // Cambia el slide cada 8000 milisegundos (8 segundos)
+    }
+
+
+    // Función para avanzar al siguiente slide (manual)
+    function nextSlide() {
+        // Obtener referencias a los elementos de radio button que representan cada slide (sus id)
+        var slideUno = document.getElementById('slideUno');
+        var slideDos = document.getElementById('slideDos');
+        var slideTres = document.getElementById('slideTres');
+        
+        // Verificar qué slide está seleccionado actualmente
+        if (currentSlide === 1) {
+            // Si el primer slide está seleccionado, cambiar al segundo slide
+                // En simultáneo con el slide actual manual, será el slide automático
+            slideDos.checked = true; //Slide Manual
+            currentSlide = 2; //Slide Automático
+        } else if (currentSlide === 2) {
+            // Si el segundo slide está seleccionado, cambiar al tercer slide
+                // En simultáneo con el slide actual manual, será el slide automático
+            slideTres.checked = true; //Slide Manual
+            currentSlide = 3; //Slide Automático
+        } else {
+            // Si el tercer slide está seleccionado, volver al primer slide
+                // En simultáneo con el slide actual manual, será el slide automático
+            slideUno.checked = true; //Slide Manual
+            currentSlide = 1; //Slide Automático
+        }
+    }
+    // Función para retroceder al slide anterior (manual)
+    function prevSlide() {
+        // Obtener referencias a los elementos de radio button que representan cada slide (sus id)
+        var slideUno = document.getElementById('slideUno');
+        var slideDos = document.getElementById('slideDos');
+        var slideTres = document.getElementById('slideTres');
+        
+        // Verificar qué slide está seleccionado actualmente
+        if (currentSlide === 1) {
+            // Si el primer slide está seleccionado, ir al tercer slide
+                // En simultáneo con el slide actual manual, será el slide automático
+            slideTres.checked = true; //Slide Manual
+            currentSlide = 3; //Slide Automático
+        } else if (currentSlide === 2) {
+            // Si el segundo slide está seleccionado, ir al primer slide
+                // En simultáneo con el slide actual manual, será el slide automático
+            slideUno.checked = true; //Slide Manual
+            currentSlide = 1; //Slide Automático
+        } else {
+            // Si el tercer slide está seleccionado, ir al segundo slide
+                // En simultáneo con el slide actual manual, será el slide automático
+            slideDos.checked = true; //Slide Manual
+            currentSlide = 2; //Slide Automático
+        }
+    }
+</script>
+
+<!--(2) CONTENEDOR PADRE: IMAGEN CELULAR Y DESCRIPCIÓN-->
+<div class="celular-and-description-container">
+    <div class="novenaHoja">
+        <div><img id="hojaFondo_9" src="/Imagenes/index/hojaFondo.png" alt="hoja_9"></div>
+    </div>
+    <div class="septimaHoja">
+        <div><img id="hojaFondo_7" src="/Imagenes/index/hojaFondo.png" alt="hoja_7"></div>
+    </div>
+    <!-- CONTENEDOR IMAGEN CELULAR -->
+    <div class="celular-container">
+        <div><img id="Celular" src="/Imagenes/index/Celu.png" alt="img_celu"></div>
+    </div>
+    <!-- CONTENEDOR DESCRIPCIÓN DEL CELULAR -->
+    <div class="description-celular">
+        <p> Fácilmente podrás hacer un monitoreo en tu<br>celular de las mediciones que realiza el Jardignomo<br>en tu planta. <span class="color_DescriptionCelu">¡ESCANEA EL QR Y ACCEDE A LA APP!</span><br><br>
+        En la app podrás seleccionar tu tipo de planta y<br>acceder a recomendaciones para su cuidado.<br><br>
+        El Jardignomo, mediante la app, te notificará:<br>
+        ✔ con qué frecuencia deberás regar tu planta<br>
+        ✔ estado (humedad/temperatura) de tu planta</p>
+    </div>
+    
+    <div class="octavaHoja">
+        <div><img id="hojaFondo_8" src="/Imagenes/index/hojaFondo.png" alt="hoja_8"></div>
+    </div>
+</div>
+
+<!--(3) CONTENEDOR PADRE: IMAGEN PERSONALIZACIÓN Y DESCRIPCIÓN-->
+<div class="personalizacion-and-description-container">
+    <!-- CONTENEDOR IMAGEN PERSONALIZACIÓN -->
+    <div class="personalizacion-container">
+        <div><img id="Personalizacion" src="/Imagenes/index/Personalizacion.png" alt="img_personalizacion"></div>
+    </div>
+    <!-- CONTENEDOR DESCRIPCIÓN DE IMG PERSONALIZACIÓN -->
+    <div class="decimaHoja">
+        <div><img id="hojaFondo_10" src="Imagenes/index/hojaFondo.png" alt="hoja_10"></div>
+    </div>
+    <div class="description-personalizacion">
+        <p>¡Puedes modificar el aspecto de tu asistente de jardín inteligente según tus gustos!<br><br><span class="color_DescriptionPersonalizacion">Tendrás opciones de personalización en la app.</span>
+    </div>
+</div>
+
+<!--(4) CONTENEDOR PADRE: IMAGEN CARCASA Y DESCRIPCIÓN-->
+<div class="carcasa-and-description-container">
+    <!-- CONTENEDOR IMAGEN CARCASA -->
+    <div class="carcasa-container">
+        <div><img id="Carcasa" src="/Imagenes/index/Carcasa.png" alt="img_carcasa"></div>
+    </div>
+    <div class="onceHoja">
+        <div><img id="hojaFondo_11" src="Imagenes/index//hojaFondo.png" alt="hoja_11"></div>
+    </div>
+    <!-- CONTENEDOR DESCRIPCIÓN DE IMG CARCASA -->
+    <div class="description-carcasa">
+        <p>La carcasa es totalmente hermética con el fin de proteger circuitos y conexiones.<br><br>
+        ¡Elíge la que prefieras para tu Jardignomo! <span class="color_DescriptionCarcasa">En sección Tienda (Carcasas y Bases).</span></p>
+    </div>
+</div>
+
+<!--(5) CONTENEDOR PADRE: IMAGEN PANEL Y DESCRIPCIÓN-->
+<div class="panelS-and-description-container">
+    <!-- CONTENEDOR IMAGEN PANEL -->
+    <div class="panelS-container">
+        <div><img id="PanelS" src="/Imagenes/index/PanelS.png" alt="img_panelS"></div>
+        <div class="doceHoja">
+            <div><img id="hojaFondo_12" src="Imagenes/index//hojaFondo.png" alt="hoja_12"></div>
+        </div>
+    </div>
+    <div class="treceHoja">
+        <div><img id="hojaFondo_13" src="Imagenes/index//hojaFondo.png" alt="hoja_13"></div>
+    </div>
+    <!-- CONTENEDOR DESCRIPCIÓN DE IMG PANEL -->
+    <div class="description-panelS">
+        <p>El producto ofrece una excepcional autonomía gracias a su innovador diseño
+            <span class="color_DescriptionPanelS">con panel solar incorporado. </span>Lo que permite un funcionamiento sostenible
+            y prolongado, y asegura que tu Jardignomo siempre esté listo para el cuidado de tus plantas, sin depender de fuentes de energía externas.</p>
+    </div>
+</div>
+
+<!--FOOTER (PIE DE PÁGINA) FINAL-->
+<footer>
+    <p>&copy; 2023 EkoTek. Todos los derechos reservados. EkoTek y Jardignomo son marcas comerciales, marcas de servicios o marcas registradas de EkoTek.</p>
+</footer>
+
+<!--(6) CONTENEDOR "CUADRO DE COOKIES"-->
+<div id="cookie-container">
+    <!--Contenedor gral de texto y botón-->
+    <div class="cookie-content">
+        <p>Este sitio web utiliza cookies para asegurar que tengas una mejor <br> experiencia al navegar por él. <a href="cookies.html" style="color: black;">Leer más</a></p>
+        <button id="cookie-button">¡Listo!</button>
+    </div>
+</div>
+<!--JS PARA MOSTRAR Y OCULTAR "CUADRO DE COOKIES"-->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const cookieContainer = document.getElementById("cookie-container");
+    const cookieButton = document.getElementById("cookie-button");
+
+    // Mostrar el cuadro de cookies al cargar la página
+    setTimeout(function () {
+        cookieContainer.style.display = "block";
+    }, 2000); // Muestra el cuadro después de 2 segundos 
+
+    // Ocultar el cuadro de cookies al hacer clic en el botón
+    cookieButton.addEventListener("click", function () {
+        cookieContainer.style.display = "none";
+    });
+});
+</script>
+
+
+</body>
+</html>

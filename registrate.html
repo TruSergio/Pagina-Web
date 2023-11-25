@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Garantizar correcta escala en apps móviles-->
+    <title>Jardignomo - Tu asistente de Jardín Inteligente</title>
+    <link rel="stylesheet" href="/Styles/index.css"> <!--Sección (index)-->
+    <link rel="stylesheet" href="/Styles/registrate.css"> <!--(registrate) Formulario Sección 2-->
+    <link rel="stylesheet" href="/Styles/iniciar_sesion.css"> <!---->
+</head>
+<body class="registrate">
+    <!--CONTENEDOR LOGOS, NAVBAR-MENÚ E INICIAR SESIÓN/REGÍSTRATE-->
+    <header>
+        <div class="logo-container_uno">
+            <div><img id="Logo1" src="/Imagenes/index/LOGO PRODUCT.png" alt="Logo"></div>
+        </div>
+
+        <!--Botón de menú hamburguesa-->
+        <div class="hamburguesa-container">
+            <button class="hamburguesa-icon" onclick="despliegueMenu()">&#9776;</button> <!--onclick servirá para hacer visible el despliegue (con JS)-->
+        </div>
+        
+        <ul class="navbar"> <!--<ul> es una lista que contendrá elementos <li> -->
+            <li><a href="index.html">Inicio</a></li> <!-- Cada elemento de la lista es un botón de navegación -->
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="guias.html">Guías</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+            <li><a href="contactanos.html">Contáctanos</a></li>
+        </ul>
+
+        <div class="button-container">
+            <a href="iniciar_sesion.html"><button>Iniciar Sesión</button></a>
+            <a href="registrate.html"><button id="Fijo">Regístrate</button></a>
+        </div>
+    
+        <div class="logo-container_dos">
+            <div><img id="Logo2" src="/Imagenes/index/LOGO EMPRESA.png" alt="Logo"></div>
+        </div>
+    </header>
+
+<!--NAVBAR-MENÚ FUERA DEL <header> --Útil para visualizar su despliegue de las Secciones en dispositivos móviles-->
+    <ul class="navbar_fueraheader"> <!--<ul> es una lista que contendrá elementos <li> -->
+        <!--Usuario tiene posibilidad de elegir dar click en área de fondo-color ó en palabra Inicio/Tienda/Guías/Contáctanos-->
+        <li class="fondoInicio" onclick="redirect('index.html')"><a href="index.html">Inicio</a></li>
+        <li class="fondoTienda" onclick="redirect('tienda.html')"><a href="tienda.html">Tienda</a></li>
+        <li class="fondoGuias" onclick="redirect('guias.html')"><a href="guias.html">Guías</a></li>
+        <li class="fondoSoporte" onclick="redirect('soporte.html')"><a href="soporte.html">Soporte</a></li>
+        <li class="fondoContactanos" onclick="redirect('contactanos.html')"><a href="contactanos.html">Contáctanos</a></li>
+    </ul>
+    <!--JS para dirigir a usuario a tal Sección cuando haga click en su respectivo "fondo"-->
+    <script>
+    // Definición de la función redirect con un parámetro (destino) --> !!!!!!!!OJO Debo definir cada una function redirect(respectivaSección)
+    function redirect(indexhtml) {
+        // Utiliza window.location.href para redirigir al usuario a la ubicación especificada
+        window.location.href = indexhtml;
+        }
+        function redirect(tiendahtml){
+            window.location.href = tiendahtml;
+        }
+        function redirect(guiashtml){
+            window.location.href = guiashtml;
+        }
+        function redirect(soportehtml){
+            window.location.href = soportehtml;
+        }
+        function redirect(contactanoshtml){
+            window.location.href = contactanoshtml;
+        }
+        </script>
+    
+    <!--JS para desplegar el navbar-menú al dar click en botón menú hamburguesa-->  
+    <script>
+    function despliegueMenu() {
+        var navbar = document.querySelector('.navbar_fueraheader');
+        navbar.style.display = (navbar.style.display === 'none' || navbar.style.display === '') ? 'block' : 'none';
+        }
+        </script>
+
+
+
+    <!--ESTRUCTURA SECCIÓN REGÍSTRATE-->
+    <!--CONTENEDOR GRAL-->
+    <div class="login-container">
+        <!--CONTENEDOR INFO-->
+        <div class="login-info-container">
+            <!--CONTENEDOR TITULO-->
+            <h1 class="title">Regístrate con</h1>
+            <!--CONTENEDOR PARA REGISTRARSE CON GOOGLE Y FACE-->
+            <div class="social-login">
+                <!--CONTENEDOR PARA GOOGLE-->
+                <div class="social-login-element">
+                    <img src="/Imagenes/iniciar_sesion_registrate/IconGoogle.png" alt="google-image">
+                    <span>Google</span>
+                </div>
+                <!--CONTENEDOR PARA FACE-->
+                <div class="social-login-element">
+                    <img src="/Imagenes/iniciar_sesion_registrate/IconFace.png" alt="face-image">
+                    <span>Facebook</span>
+                </div>
+            </div> 
+            <p>ó</p>
+            <!--CONTENEDOR ESPACIOS DEL FORMULARIO-->
+            <form class="inputs-container">
+                <input class="input" type="text" placeholder="Nombre completo"> <!--Nombre Usuario. 'placeholder' (marca posición-texto transparente)-->
+                <input class="input" type="text" placeholder="Correo electrónico">
+                <input class="input" type="password" placeholder="Contraseña"> <!--Contraseña-->
+                <p>¿Olvidaste la contraseña? <span class="span"><a href="#">Click aquí</a></span></p>
+                <button class="btn">Registrarse</button>
+                <p>¿Ya tienes una cuenta? <span class="span"><a href="iniciar_sesion.html">Iniciar Sesión</a></span></p>
+            </form>
+        </div>
+        <!--Imagen que irá al lado del contenedor info-->
+        <img class="image-container" src="Imagenes/iniciar_sesion_registrate/registro3.jpg" alt="login">
+    </div>
+<!--FOOTER (PIE DE PÁGINA) FINAL-->
+<footer>
+    <p>&copy; 2023 EkoTek. Todos los derechos reservados. EkoTek y Jardignomo son marcas comerciales, marcas de servicios o marcas registradas de EkoTek.</p>
+</footer>
+
+</body>
+</html>

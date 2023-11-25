@@ -1,0 +1,137 @@
+/*____________SECCIÓN INTERNA "JARDIGNOMO/MÓDULOS"_____________*/
+
+/*Botón de menú hamburguesa*/
+.hamburguesa-container{
+    display: none; /* Inicialmente oculta el icono del botón-menú para escritorio, más abajo tendrá mediaQueryes y aparecerá para dispositivos móviles*/
+}
+  
+/*Menú desplegable navbar_fueraheader */
+.navbar_fueraheader{
+    display: none; /* Inicialmente oculta menú para escritorio, más abajo tendrá mediaQueryes y aparecerá para dispositivos móviles*/
+}
+
+
+/*ESTRUCTURA SECCIÓN TIENDA (encabezado)*/
+
+/* (1) CONTENEDOR DE ELEMENTO div ("CARRITO Y BARRA DE BÚSQUEDA")*/
+/*Dimensiones de imagen carro*/
+#aspectCarro{
+    height: 70px;
+    cursor: pointer;
+}
+/*Texto "Añade al carrito"*/
+.carro-search-container p{
+    display: flex;
+    margin: 0px -535px; /*Espacio externo arriba-abajo 0px y derecha-izquierda -535px*/
+    font-size: 15px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/*Barra de búsqueda y carrito*/
+.carro-search-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 36%; /*Espacio entre elementos*/
+    margin: 0px 0px; /*Margen externa*/
+    background-color: #eee;
+}
+/*Espacio Formulario (barra de búsqueda): entre espacio-entrada de texto y el espacio para dar click "Buscar"*/
+.carro-search-container form {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+/*Espacio-entrada de texto input "¿Qué buscas?"*/
+.carro-search-container input[type="text"] {
+    border: 1px solid #000; /*Borde de espacio-entrada de texto*/
+    padding: 0.4rem; /*Margen interna de la entrada de texto*/
+    font-size: 1rem; /*Tamaño de la entrada de texto*/
+    font-size: 15px; font-family: Tahoma, sans-serif;
+}
+/*Espacio para dar click submit "Buscar"*/
+.carro-search-container input[type="submit"] {
+    background-color: #000;
+    color: #fff; /*Color del texto "Buscar"*/
+    border: none; /*Que no tenga borde el input submit*/
+    padding: 0.5rem 10px; /*Margen interna arriba-abajo 0.5rem y derecha-izquierda 10px*/
+    font-size: 1rem; /*Tamaño input submit*/
+    cursor: pointer;
+    font-size: 15px; font-family: Tahoma, sans-serif;
+}
+
+/*ESTRUCTURA SECCIÓN INTERNA "JARDIGNOMO/MÓDULOS"*/
+/* (2) CONTENEDOR PARA EL FONDO*/
+.fondo-adicional {
+    background-color: #eee; /* Color de fondo adicional */
+    padding: 10px; /* Espaciado interno del fondo adicional */
+}
+/* (3) CONTENEDOR DE ELEMENTO div ("CONTENEDOR DE TITULO "JARDIGNOMO/MÓDULOS")*/
+/*Posición título*/
+#titulo1{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin: 5px 25px; /*Margen externa*/
+    font-size: 50px; font-family: Tahoma, sans-serif;
+}
+
+/* (4) CONTENEDOR DE ELEMENTO div ("CONTENEDOR DE IMÁGENES "JARDIGNOMO/MÓDULOS")*/
+/*Posición de las dos imgs "Jardignomo/Modulos"*/
+.imagen-container {
+    position: relative; /*Posicionamiento del elemento "img", con respecto a su posición normal en el flujo del doc*/
+    display: inline-block; /* Hace que los elementos sean mostrados en línea */
+    white-space: nowrap; /* Evita que los elementos se desplacen automáticamente a la siguiente línea */
+    margin-right: 20px; /* Espacio entre las imágenes */
+    animation: desplazamiento 17s linear infinite; /* Ajusta la duración y el tipo de animación automática*/
+}
+/* Añade una animación de desplazamiento */
+@keyframes desplazamiento {
+    2% { transform: translateX(0); } /* Inicio sin desplazamiento, o bueno, con un 2% para mostrar bien la primer img */
+    100% { transform: translateX(-150%); } /* Desplazamiento completo hacia la izquierda */
+}
+/*Dimensiones de las imgs "Jardignomo/Modulos"*/
+#Jardignomo-Mini, #Jardignomo-Pro, #CarcasasBases, #modulos{
+    height: 370px;
+    width: 445px; /* Esto mantiene la proporción original */
+    cursor: pointer;
+    border-radius: 3%;
+    opacity: 1; /*Color original al pasar el cursor (completamente opaca) */ 
+    transform: opacity 0.7s ease, transform 0.5s ease; /*Agrega una transición suave al pasar el cursor aplicando efecto hover de: opacidad y rotación (rotate)*/
+}
+/*Efecto hover: trasparencia color de imágenes al pasar el cursor*/
+#Jardignomo-Mini:hover, #Jardignomo-Pro:hover , #CarcasasBases:hover, #modulos:hover{
+    opacity: 0.1; /*Trasparencia: entre 0 (completamente transparente) y 1 (completamente opaca) */
+    transform: rotate(-4deg) scale(0.9); /* Giro de 45 grados al pasar el cursor, y escala */
+}
+/*Contenedor padre de las imágenenes (Jardignomo/Módulos)*/
+.imagenesPadre-container{
+    display: flex;
+    justify-content: flex-start; /* Ajusta el contenido al comienzo del contenedor */
+    align-items: center;
+    gap: 85px; /* Espacio entre las imágenes */
+    overflow: hidden; /* Oculta el contenido que se desborda del contenedor */
+    white-space: nowrap; /* Evita que los elementos se desplacen automáticamente a la siguiente línea */
+    margin-bottom: 15px; /*Margen externa desde parte inferior*/
+    margin: 30px;
+}
+/*Texto descriptivo sobre la imagen (al pasar el cursor)*/
+.imagen-texto {
+    position: absolute; /*Posicionamiento del elemento "el texto descriptivo", conforme al posicionamiento de su contenedor ancestro"imagenesPadre-container"*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*Traslada el texto al centro (X e Y). Se centrará conforme al posicionamiento de su contenedor ancestro "imagenesPadre-container"*/
+    color: rgb(0, 110, 0);
+    font-weight: 600; /*Tamaño-grosor texto*/
+    font-size: 18px;
+    pointer-events: none; /* Permite hacer clic a través del texto */
+    opacity: 0; /*Trasparencia inicial del texto*/
+    transition: opacity 0.5s ease; /* Agrega transición suave para efecto hover de opacidad (para el texto)*/
+}
+/*Muestra el texto al pasar el cursor sobre la imagen */
+.imagen-container:hover .imagen-texto {
+    opacity: 1; /*Trasparencia final-opaca-->texto color origin*/
+}
+/*Aspecto del texto descriptivo (texto de la imagen)*/
+.imagen-texto{
+    font-size: 18px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align:center;
+}

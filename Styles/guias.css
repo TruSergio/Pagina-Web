@@ -1,0 +1,176 @@
+/*____________SECCIÓN "GUÍAS"_____________*/
+
+/*Botón de menú hamburguesa*/
+.hamburguesa-container{
+    display: none; /* Inicialmente oculta el icono del botón-menú para escritorio, más abajo tendrá mediaQueryes y aparecerá para dispositivos móviles*/
+}
+  
+/*Menú desplegable navbar_fueraheader */
+.navbar_fueraheader{
+    display: none; /* Inicialmente oculta menú para escritorio, más abajo tendrá mediaQueryes y aparecerá para dispositivos móviles*/
+}
+
+
+/*ESTRUCTURA SECCIÓN GUÍAS*/
+/* (1) CONTENEDOR PARA EL FONDO*/
+.fondo-adicional {
+    background-color: #eee; /* Color de fondo adicional */
+    padding: 215px; /* Espaciado interno del fondo adicional */
+
+}
+/*(2) CONTENEDOR TITULOS ("GUÍAS")*/
+/*Posición de cada título*/
+#titulo1{
+    display: flex;
+    align-items: center;
+    font-size: 65px; font-family: Tahoma, sans-serif;  
+}
+/*Posición de los dos títulos en conjunto "Jardignomo/Módulos y Tienda de auxiliares"*/
+.tituloPadre-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 10px;
+    margin-top: -150px; /*Margen externa superior (negativa para que suba el texto)*/
+    gap: 115px;
+}
+
+/* (3) CONTENEDOR DE ELEMENTO div ("BARRA DE BÚSQUEDA")*/
+/*Barra de búsqueda*/
+.search-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: -30px 0px; /*Margen externa*/
+    background-color: #eee;
+}
+/*Espacio Formulario (barra de búsqueda): entre espacio-entrada de texto y el espacio para dar click "Buscar"*/
+.search-container form {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+/*Espacio-entrada de texto input "¿Qué buscas?"*/
+.search-container input[type="text"] {
+    border: 1px solid #000; /*Borde de espacio-entrada de texto*/
+    padding: 0.4rem; /*Margen interna de la entrada de texto*/
+    font-size: 1rem; /*Tamaño de la entrada de texto*/
+    font-size: 15px; font-family: Tahoma, sans-serif;
+}
+/*Espacio para dar click submit "Buscar"*/
+.search-container input[type="submit"] {
+    background-color: #000;
+    color: #fff; /*Color del texto "Buscar"*/
+    border: none; /*Que no tenga borde el input submit*/
+    padding: 0.5rem 10px; /*Margen interna arriba-abajo 0.5rem y derecha-izquierda 10px*/
+    font-size: 1rem; /*Tamaño input submit*/
+    cursor: pointer;
+    font-size: 15px; font-family: Tahoma, sans-serif;
+}
+
+/* (4) CONTENEDOR DE ELEMENTO div ("CONTENEDOR DE )*/
+/*Botón general del menú*/
+#botonPrincipal {
+    display: flex;
+    align-items: center;
+    padding: 10px 170px;
+    margin: 90px auto; margin-bottom: -60px;
+    background-color: #025402; 
+    color: #fff; /* Letras blancas */
+    font-size:17px;font-family: 'Abadi', sans-serif;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 7px;
+    transition: background-color 1s ease; /*Transición al acercar cursor*/
+}
+/*El texto se expandirá para ocupar todo el espacio disponible (flex-grow: 1;), y la flecha se mantendrá a la derecha.*/
+.texto {
+  flex-grow: 1;
+}
+/*Padre: cambio de color fondo y letras al pasar cursor*/
+#botonPrincipal:hover {
+    background-color: rgba(255, 255, 255, 0.417); 
+    color: #000; /*Color texto*/
+}
+/* Contenedor flecha */
+.flecha {
+    display: inline-flex; /* Alineamos elementos en línea para que no afecten el flujo normal */
+    align-items: center; /* Centramos verticalmente */
+    transition: transform 0.3s ease; /* Transición para la rotación */
+    font-size: 1.2em; /* Ajusta el tamaño del icono según tus preferencias */
+    margin-left: 200px; 
+}
+/* Posición flecha pos-clic*/
+.flecha.rotada {
+    transform: rotate(-180deg); /*Rotación Flecha para que apunte hacia arriba después del clic */
+}
+  
+/* Posición flecha Ícono pre-clic*/
+.material-symbols-outlined {
+    color: #fff;
+    margin-left: 5px; /* Ajusta el espacio entre el texto y la flecha */
+    margin-bottom: -2px; /*Posición antes de clic*/
+    transform: rotate(0deg); /*Rotación Flecha Incialmente*/
+}
+/*Contenedor Hijos*/
+#opciones {
+    display: flex; /* Oculto inicialmente */
+    flex-direction: column;
+    padding: 10px 295px;
+    margin: -80px auto; margin-top: 70px;
+    margin-bottom:-150px ;
+}
+/*Se añade la clase oculto creada en JS*/
+#opciones.oculto {
+    display: none; /*Me ocultará botones hijos apenas abra la página*/
+  }
+/*Botones hijos*/  
+#opciones button {
+    padding: 10px;
+    background-color: #07894f;
+    color: #fff; /* Letras blancas */
+    border: none; border-radius: 7px;
+    cursor: pointer;
+    margin-top: 5px;
+    font-size:17px;font-family: 'Abadi', sans-serif;
+    transition: background-color 1s ease; /*Transición al acercar cursor */
+}
+/*Hijos: cambio de color letras al pasar cursor (cada button, id)*/
+#uno:hover,#dos:hover,#tres:hover,#cuatro:hover,#cinco:hover{
+    color: #000;
+}
+
+#opciones button:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Verde con transparencia o casi blanco */
+}
+/*Se le dará prioridad visibilizar el botón Principal*/
+#botonPrincipal{
+    display: flex !important; /* Se utiliza !important para asegurar que la propiedad display tenga prioridad */
+}
+
+
+
+
+
+/*FOOTER (PIE DE PÁGINA) FINAL*/
+footer {
+    text-align: center;
+    background-color: rgb(10, 48, 13); /*#123c14;*/ /*#002E10   #0c310f*/
+    color: #fff;
+    padding: 30px; /*Margen interna*/
+    font-size: 17px; font-family: Arial, sans-serif;
+  }
+
+
+
+
+  /*GUÍAS mediaQueryes para dispositivos móviles*/
+/*PRIMER BREAK POINT (MENÚ HAMBURGUESA): A partir de los 885px del ancho wiewport, hacia abajo*/
+
+
+
+
+
+

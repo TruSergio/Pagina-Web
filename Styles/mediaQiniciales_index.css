@@ -1,0 +1,87 @@
+/* DOC RESPONSIVE mediaQueryes para dispositivos móviles*/
+/* PRIMER BREAK POINT: A partir de los 1000px del ancho viewport, hacia abajo */
+@media only screen and (max-width: 1109px) { /*1250px origin*/ /*1520px predet*/
+  /*Contenedor gral de logos, navbar-menú, iniciar sesión/regístrate "header"*/
+  header{
+    width: 100%; /*Ancho del elemento en el contenedor*/
+    margin: 0 auto; /* Centra el header */
+    box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+  }
+  /* Ajusta el diseño de los contenedores dentro del header */
+  .logo-container_uno, .navbar, .button-container, .logo-container_dos{
+    display: inline-block; /* Alinea los elementos en línea */
+    margin: 0; /* Agrega márgenes entre los elementos*/
+    box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+  }
+  /* Ajusta el diseño de la barra de navegación (navbar) */
+  .navbar {
+    flex: 1; /* Permite que la barra de navegación crezca para ocupar el espacio restante */
+    box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+  }
+  /* Ajusta el diseño de los botones de la barra de navegación (Inicio/Tienda/Guías/Contáctanos) */
+  .navbar li {
+    display: none;
+    align-items: center;
+  }
+}
+
+/* SEGUNDO BREAK POINT: A partir de los 846px del ancho viewport, hacia abajo */
+@media only screen and (max-width: 846px) { /*1250px origin*/
+  /*Contenedor gral de logos, navbar-menú, iniciar sesión/regístrate "header"*/
+  header{
+    width: 100%; /*Ancho del elemento en el contenedor*/
+    margin: 0 auto; /* Centra el header */
+    box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+  }
+  /* Ajusta el diseño de la barra de navegación (navbar) */
+  .navbar {
+    flex: 1; /* Permite que la barra de navegación crezca para ocupar el espacio restante */
+    box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+  }
+  
+}
+
+/* TERCER BREAK POINT: A partir de los 642px del ancho viewport, hacia abajo */
+@media only screen and (max-width: 642px) { /*1250px origin*/
+  /*Contenedor gral de logos, navbar-menú, iniciar sesión/regístrate "header"*/
+  header{
+    width: 100%; /*Ancho del elemento en el contenedor*/
+    margin: 0 auto; /* Centra el header */
+    box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+  }
+  /*Redimensiono imagen Logo Producto*/
+  #Logo1{
+    max-width: 100%; /*No se amplíe más allá de su tamaño original, permitiendo que se ajuste al ancho del contenedor sin distorsionarse*/
+    height: auto; /* Esto asegura que la altura se ajuste proporcionalmente al ancho */
+  }
+  /* Ajusta el diseño de la barra de navegación (navbar) */
+  .navbar {
+    flex: 1; /* Permite que la barra de navegación crezca para ocupar el espacio restante */
+    box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+  }
+}
+
+/* CUARTO BREAK POINT: A partir de los 480px del ancho viewport, hacia abajo */
+@media only screen and (max-width: 480px) { /*1250px origin*/
+  /*Contenedor gral de logos, navbar-menú, iniciar sesión/regístrate "header"*/
+  header{
+    width: 100%; /*Ancho del elemento en el contenedor*/
+    margin: 0 auto; /* Centra el header */
+    box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+  }
+  /*Redimensiono imagen Logo Producto*/
+  #Logo1{
+    max-width: 100%; /*No se amplíe más allá de su tamaño original, permitiendo que se ajuste al ancho del contenedor sin distorsionarse*/
+    height: auto; /* Esto asegura que la altura se ajuste proporcionalmente al ancho */
+  }
+  /* Ajusta el diseño de la barra de navegación (navbar) */
+  .navbar {
+    flex: 1; /* Permite que la barra de navegación crezca para ocupar el espacio restante */
+    box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+  }
+  /* Ajusta el diseño de los botones de la barra de navegación (Inicio/Tienda/Guías/Contáctanos) */
+  .navbar li {
+    display: none;
+    align-items: center;
+  }
+}

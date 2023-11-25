@@ -1,0 +1,146 @@
+/*____________SECCIÓN "SOPORTE"_____________*/
+
+/*Botón de menú hamburguesa*/
+.hamburguesa-container{
+    display: none; /* Inicialmente oculta el icono del botón-menú para escritorio, más abajo tendrá mediaQueryes y aparecerá para dispositivos móviles*/
+}
+  
+/*Menú desplegable navbar_fueraheader */
+.navbar_fueraheader{
+    display: none; /* Inicialmente oculta menú para escritorio, más abajo tendrá mediaQueryes y aparecerá para dispositivos móviles*/
+}
+
+
+/*ESTRUCTURA SECCIÓN SOPORTE*/
+/* (1) CONTENEDOR PARA EL FONDO*/
+.fondo-adicional {
+    background-color: #eee; /* Color de fondo adicional */
+    padding: 0px; /* Espaciado interno del fondo adicional */
+
+}
+/*(2) CONTENEDOR TITULOS ("SOPORTE")*/
+/*Posición de cada título*/
+#titulo1{
+    display: flex;
+    align-items: center;
+    font-size: 45px; font-family: Tahoma, sans-serif;  
+}
+/*Posición de los dos títulos en conjunto "Jardignomo/Módulos y Tienda de auxiliares"*/
+.tituloPadre-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 10px;
+    margin-top: 0px; /*Margen externa superior (negativa para que suba el texto)*/
+    gap: 115px;
+}
+
+/* (3) CONTENEDOR DE ELEMENTO div ("BARRA DE BÚSQUEDA")*/
+/*Barra de búsqueda*/
+.search-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: -30px 0px; /*Margen externa*/
+    background-color: #eee;
+}
+/*Espacio Formulario (barra de búsqueda): entre espacio-entrada de texto y el espacio para dar click "Buscar"*/
+.search-container form {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+/*Espacio-entrada de texto input "¿Qué buscas?"*/
+.search-container input[type="text"] {
+    border: 1px solid #000; /*Borde de espacio-entrada de texto*/
+    padding: 0.4rem; /*Margen interna de la entrada de texto*/
+    font-size: 1rem; /*Tamaño de la entrada de texto*/
+    font-size: 15px; font-family: Tahoma, sans-serif;
+}
+/*Espacio para dar click submit "Buscar"*/
+.search-container input[type="submit"] {
+    background-color: #000;
+    color: #fff; /*Color del texto "Buscar"*/
+    border: none; /*Que no tenga borde el input submit*/
+    padding: 0.5rem 10px; /*Margen interna arriba-abajo 0.5rem y derecha-izquierda 10px*/
+    font-size: 1rem; /*Tamaño input submit*/
+    cursor: pointer;
+    font-size: 15px; font-family: Tahoma, sans-serif;
+}
+
+/* (4) CONTENEDOR DE ELEMENTO div ("CONTENEDOR DE "OPCIÓN ELEGIDA")*/
+/*Botón general*/
+#botonPrincipal {
+    display: flex;
+    align-items: center;
+    padding: 10px 170px;
+    margin: 90px auto; margin-bottom: -60px;
+    background-color: #025402; 
+    color: #fff; /* Letras blancas */
+    font-size:17px;font-family: 'Abadi', sans-serif;
+    border: none;
+    position: relative;
+    border-radius: 7px;
+}
+/*El texto se expandirá para ocupar todo el espacio disponible (flex-grow: 1;), y la flecha se mantendrá a la derecha.*/
+.texto {
+  flex-grow: 1;
+}
+
+/* (5) CONTENEDOR GRAL*/
+/*Contenedor gral*/
+.gral-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+/* (6) CONTENEDOR TITULO "PASO A PASO" */
+.titulo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 110px auto;
+    background-color: #025402;
+    color: #fff; /* Letras blancas */
+    width: 50%;
+    height: 100%;
+    font-size: 13px;font-family: 'Abadi', sans-serif;
+    border-radius: 7px;
+}
+/*(7) DESCRIPCIÓN*/
+.descripcion{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 15px;font-family: 'Abadi', sans-serif;
+    margin-bottom: 40px;
+    line-height: 22px;
+    text-align: justify;
+    margin-left: auto;
+    
+}
+
+
+
+
+
+
+
+/*FOOTER (PIE DE PÁGINA) FINAL*/
+footer {
+    text-align: center;
+    background-color: rgb(10, 48, 13); /*#123c14;*/ /*#002E10   #0c310f*/
+    color: #fff;
+    padding: 30px; /*Margen interna*/
+    font-size: 17px; font-family: Arial, sans-serif;
+  }
+
+
+
+  /*SOPORTE mediaQueryes para dispositivos móviles*/
+/*PRIMER BREAK POINT (MENÚ HAMBURGUESA): A partir de los 885px del ancho wiewport, hacia abajo*/
+
+

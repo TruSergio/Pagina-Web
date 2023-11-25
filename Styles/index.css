@@ -1,0 +1,787 @@
+/*____________SECCIÓN "INDEX"_____________*/
+
+/*Botón de menú hamburguesa*/
+.hamburguesa-container{
+  display: none; /* Inicialmente oculta el icono del botón-menú para escritorio, más abajo tendrá mediaQueryes y aparecerá para dispositivos móviles*/
+}
+
+/*Menú desplegable navbar_fueraheader */
+.navbar_fueraheader{
+  display: none; /* Inicialmente oculta menú para escritorio, más abajo tendrá mediaQueryes y aparecerá para dispositivos móviles*/
+}
+
+
+/*FONDO*/
+body {
+    min-height: 100vh; /*establece la altura mínima del cuerpo en el 100% del alto de la ventana del navegador (viewport height), lo que asegura que el degradé se aplique a todo el cuerpo*/
+    background: rgb(188,255,229);
+    background: radial-gradient(circle, rgba(188,255,229,1) 0%, rgba(5,147,113,1) 50%, rgba(4,127,98,1) 60%, rgba(4,112,86,1) 70%, rgba(1,37,29,1) 90%, rgba(0,0,0,1) 100%);
+    /*Asegurar que en el doc no hallan márgenes ni rellenos predeterminados para evitar espacios innecesarios*/
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+  }
+
+/*id (IDENTIFICADOR) Logos*/
+#Logo1{ /*Logo Product*/
+  height: 70px;
+}
+#Logo2{ /*Logo Empresa*/
+  height: 67px;
+}
+
+
+/*POSICIÓN-CONTENEDOR DE COMPONENTE div ("LOGO UNO")*/
+.logo-container_uno {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px; /*Margen interna*/
+  margin: 0px 15px; /*Margen externa del contenedor 0px arriba y abajo, 15px izquierda y derecha*/
+}
+/*POSICIÓN-CONTENEDOR DE COMPONENTE div ("LOGO DOS")*/
+.logo-container_dos {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px; /*Margen interna*/
+  margin: 0px 15px; /*Margen externa del contenedor 0px arriba y abajo, 15px izquierda y derecha*/
+}
+
+
+/*POSICIÓN-CONTENEDOR DE COMPONENTES li de class navbar ("Menú: Inicio, Tienda, Guías, Soporte, Contáctanos") */
+.navbar {
+  list-style-type: none; /* Quita los puntos de la lista */
+  display: flex;
+  gap: 30px; /* Espacio entre los botones */
+  margin-left: -320px; /*370px*/
+  font-size: 15px; font-family: 'Abadi', sans-serif;
+}
+/* Aspecto elementos de la lista de navegación */
+.navbar li {
+  display: inline; /* Elementos se muestren en línea (horizontalmente) */
+}
+/* Enlaces dentro de los elementos de la lista*/
+.navbar li a {
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+  color: #000; /*Color texto*/
+  font-weight: bold; /* Texto en negrita */
+  transition: .7s; /* Suavizar la transición del cambio de color cuando se pasa el cursor por encima de los enlaces.*/
+}
+/*Efecto cambia color al pasar el cursor por la navbar*/
+.navbar li a:hover {
+  color: white;
+}
+
+
+/*POSICIÓN-CONTENEDOR DE COMPONENTE button ("Iniciar Sesión/Regístrate") */
+.button-container {
+  display: flex;
+  gap: 9px; /* Espacio entre los botones */
+  margin-right: -280px; /*-335px*/
+}
+.button-container a {
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+  color: #000; /* Color del texto */
+}
+.button-container button {
+  padding: 9px 10px; /* Espaciado interno del botón */
+  border: none; /* Elimina el borde del botón predeterminado */
+  border-radius: 8px; /* Borde redondo */
+  background-color: transparent; /* Color de fondo */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: background-color 0.6s; /* Agrega una transición suave al color de fondo */
+}
+/* Efecto cambia color al pasar el cursor por botón */
+.button-container a:hover button {
+  background-color: #1DF2B1; /* Color de fondo al pasar el cursor */
+}
+/*id (IDENTIFICADOR) Botón*/
+#Fijo {/*Botón Regístrate*/
+  background-color: #757575;
+  color: #fff;
+}
+/*Efecto cambia color al pasar el cursor por botón*/
+#Fijo:hover{
+  background-color: #a9a8a8;
+}
+
+
+
+/*EFECTO STICKY NAVIGATION BAR (MENÚ)*/
+/* Agrega una clase "sticky" para hacer que el header se vuelva fijo */
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #E2E1E6;
+  z-index: 100; /* Asegura que esté por encima del contenido desplazado */
+}
+/* (1) FLEX CONTENEDOR "GENERAL" LOGOS, BOTONES DE MENÚ E INICIAR SESIÓN/REGÍSTRATE*/
+/* Ajusta el estilo del header en su estado inicial */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #a0ffc0;
+  transition: background-color 10s; /* Agrega una transición suave (es un cambio de color gradual del header-->intercambio con el sticky) */
+}
+
+/* IMAGEN HOJA DE FONDO (INDIVIDUALES PARA VARIAR SU TAMAÑO Y ROTACIÓN) *Se distribuirán a lo largo del body del doc*/
+.primerHoja{
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  padding: 0px; /*Margen interna*/
+  margin: 10px 5px;/*Margen externa del contenedor 5px arriba y abajo, 5px izquierda y derecha*/
+}
+/*id (IDENTIFICADOR) hojaFondo_1 */
+#hojaFondo_1{
+  height: 60px;
+}
+.segundaHoja{
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  padding: 0px; /*Margen interna*/
+  margin: 0px 5px;/*Margen externa del contenedor 5px arriba y abajo, 5px izquierda y derecha*/
+}
+/*id (IDENTIFICADOR) hojaFondo_2 */
+#hojaFondo_2{
+  height: 40px;
+  transform: rotate(90deg);
+  opacity: 0.5; /*rango: 0.0-1.0*/
+}
+.tercerHoja{
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  padding: 0px; /*Margen interna*/
+  margin: 0px 90px;/*Margen externa del contenedor 5px arriba y abajo, 5px izquierda y derecha*/
+}
+/*id (IDENTIFICADOR) hojaFondo_3 */
+#hojaFondo_3{
+  height: 90px;
+  transform: rotate(130deg);
+  opacity: 0.5; /*rango: 0.0-1.0*/
+}
+.cuartaHoja{
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  padding: 0px; /*Margen interna*/
+  margin: 0px -30px;/*Margen externa del contenedor 0px arriba y abajo, 5px izquierda y derecha*/
+}
+/*id (IDENTIFICADOR) hojaFondo_4 */
+#hojaFondo_4{
+  height: 35px;
+  transform: rotate(107deg);
+}
+.quintaHoja{
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  padding: 0px; /*Margen interna*/
+  margin: -380px 78px;/*Margen externa del contenedor 0px arriba y abajo, 5px izquierda y derecha*/
+}
+/*id (IDENTIFICADOR) hojaFondo_5 */
+#hojaFondo_5{
+  height: 115px;
+  transform: rotate(17deg);
+}
+.sextaHoja{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 0px; /*Margen interna*/
+  margin: 0px 0px;/*Margen externa del contenedor 0px arriba y abajo, 5px izquierda y derecha*/
+}
+/*id (IDENTIFICADOR) hojaFondo_6 */
+#hojaFondo_6{
+  height: 60px;
+  transform: rotate(17deg);
+}
+.septimaHoja{
+  display: flex;
+  justify-content: flex-start; 
+  align-items: stretch;
+  padding: 0px; /*Margen interna*/
+  margin: 0x 0px;/*Margen externa del contenedor 5px arriba y abajo, 5px izquierda y derecha*/
+}
+/*id (IDENTIFICADOR) hojaFondo_7 */
+#hojaFondo_7{
+  height: 50px;
+  transform: rotate(130deg);
+  opacity: 0.3; /*rango: 0.0-1.0*/
+}
+.octavaHoja{
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  padding: 0px; /*Margen interna*/
+  margin: 0px -100px;/*Margen externa del contenedor 5px arriba y abajo, 5px izquierda y derecha*/
+}
+/*id (IDENTIFICADOR) hojaFondo_8 */
+#hojaFondo_8{
+  height: 120px;
+  transform: rotate(100deg);
+  opacity: 0.5; /*rango: 0.0-1.0*/
+}
+.novenaHoja{
+  display: flex;
+  justify-content: flex-start; 
+  align-items: end;
+  padding: 0px; /*Margen interna*/
+  margin: 5px -190px;/*Margen externa del contenedor 5px arriba y abajo, 5px izquierda y derecha*/
+}
+/*id (IDENTIFICADOR) hojaFondo_9 */
+#hojaFondo_9{
+  height: 115px;
+}
+.decimaHoja{
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  padding: 0px; /*Margen interna*/
+  margin: 0px -30px;/*Margen externa del contenedor 0px arriba y abajo, 5px izquierda y derecha*/
+}
+/*id (IDENTIFICADOR) hojaFondo_10 */
+#hojaFondo_10{
+  height: 42px;
+  transform: rotate(107deg);
+}
+.onceHoja{
+  display: flex;
+  justify-content:center; 
+  align-items:center;
+  padding: 0px; /*Margen interna*/
+  margin: 0px -110px;/*Margen externa del contenedor 0px arriba y abajo, 5px izquierda y derecha*/
+}
+/*id (IDENTIFICADOR) hojaFondo_11 */
+#hojaFondo_11{
+  height: 117px;
+  transform: rotate(97deg);
+}
+.doceHoja{
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  padding: 0px; /*Margen interna*/
+  margin: 0px -60px;/*Margen externa del contenedor 5px arriba y abajo, 5px izquierda y derecha*/
+}
+/*id (IDENTIFICADOR) hojaFondo_12 */
+#hojaFondo_12{
+  height: 60px;
+  transform: rotate(90deg);
+  opacity: 0.5; /*rango: 0.0-1.0*/
+}
+.treceHoja{
+  display: flex;
+  justify-content: flex-end; 
+  align-items: end;
+  padding: 0px; /*Margen interna*/
+  margin: 60px -60px;/*Margen externa del contenedor 0px arriba y abajo, 5px izquierda y derecha*/
+}
+/*id (IDENTIFICADOR) hojaFondo_13 */
+#hojaFondo_13{
+  height: 70px;
+  transform: rotate(20deg);
+}
+
+
+
+/*TÍTULO 1 PRESENTACIÓN PRODUCTO*/
+.titulo1{
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Alineación vertical al centro */
+  padding: 0px; /* Margen interna */
+  font-family: Tahoma, sans-serif; font-size: 16px; 
+}
+/* Efecto de brillo palabra "Jardignomo" */
+.brillo {
+  animation: brilloTexto 2s infinite alternate; /* Aplicar la animación "brilloTexto". Ciclo infinito alternando 2s */
+}
+/* Definición de la animación "brilloTexto" */
+@keyframes brilloTexto { /*Regla de @keyframe es 'brilloTexto'. Se usa para definir la serie de fotogramas clave en la animación 
+                          Estos fotogramas clave describen cómo cambian las propiedades de un elemento en una animación a lo largo del tiempo.*/
+  0% { /*Estado inicial animación*/
+    color: #ffffff; /* Color inicial*/
+  }
+  100% { /*Estado final animación*/
+    color: #674baf; /* Color final*/
+  }
+}
+
+
+/*(1) CONTENEDOR PADRE: IMAGEN PRODUCTO Y CONCEPTO DEL MISMO*/
+/*TAMAÑO CONTENEDOR IMAGEN PRODUCTO JARDIGNOMO*/
+/*id (IDENTIFICADOR) Product*/
+#Product{ /*Product*/
+  height: 360px;
+  border-radius: 37px;
+}
+/*POSICIÓN-CONTENEDOR DE ELEMENTO div ("IMAGEN PRODUCTO")*/
+.product-container{
+  display: flex;
+  align-items: center; /* Alineación vertical al centro */
+  padding: 10px; /* Margen interna */
+}
+/*POSICIÓN-CONTENEDOR DE ELEMENTO div ("CONCEPTO PRODUCTO")*/
+.concepto-producto{
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Alineación vertical al centro */
+  padding: 22px; /* Margen interna */
+  font-size: 19px; font-family: 'Cambria', sans-serif;
+  font-weight: bold; /*Texto en negrita*/
+  text-align: justify; /* Justificar el texto al borde (alinearlo-como lo haría en Word)*/
+}
+/* (1) CONTENEDOR PADRE: envuelve la imagen y el texto-concepto del Producto */
+.product-and-concept-container {
+  display: flex;
+  justify-content: space-between; /* Alineación horizontal al espacio entre los elementos */
+  flex-direction: row-reverse;
+  margin: 35px 130px; /* Margen externo del contenedor 0px arriba y abajo, 60px izquierda y derecha */
+  gap: 70px; /*Distancia entre texto e imagen*/
+}
+
+
+/* SLIDER AUTOMÁTICO CARRUSEL IMÁGENES */
+.container{
+  position: relative;
+  width: 100%;
+  height: 60vh; /*establece la altura mínima del cuerpo en el 60% del alto de la ventana del navegador (viewport height), lo que establece que se utilizará un espacio del 60% para el carrusel*/
+  background: rgb(224,224,224);
+background: linear-gradient(180deg, rgba(224, 224, 224, 0.476) 0%, rgba(131, 131, 131, 0.493) 100%);  
+  overflow: hidden; /*Oculto la barra de desplazamiento horizontal en el carrusel, NECESARIO PARA EVITAR VER IMÁGENES QUE SE TURNAN EN EL CARRUSEL */
+}
+/*Trabajo con elemento <input> de class "slider"*/
+.slider input{
+  visibility: hidden; /*oculto los botones*/
+  display: none; /*los deshabilito o no los muestro*/
+}
+/*Trabajo botones generales con class "buttons""*/
+.buttons{
+  position: absolute; /*Posición inferior en el área del container*/
+  width: 100%; 
+  display: flex; /*Contenedor para poder posicionar los botones*/
+  justify-content: center;
+  bottom: 30px; /*Ubicación de botones en la parte inferior*/
+  gap: 10px;/*Espacio entre ellos*/
+}
+/*Trabajo cada botón con elemento <label>, de class "buttons""*/
+.buttons label{
+  width: 30px;
+  height: 8px;
+  background-color: #fff;
+  opacity: 0.5; /*Botones casi transparentes*/
+  cursor: pointer;
+  z-index: 1;
+  transition: 300ms ease-in-out; /*Para efecto hover creado a continuación: */ /*ease-in-out para que el efecto se haga de forma fluida*/
+}
+/*Efecto hover para cada botón*/
+.buttons label:hover{
+  transform: scale(1.2);
+  opacity: 1; /*Que la opacidad inicial se elimine al acercar el cursor*/
+}
+/*Trabajo la propiedad que tendrá cada botón al dar click, utilizando elemento <input> de class "slider"*/
+  /*SE LLAMA A CADA ELEMENTO-BOTÓN DE <input> utilizando nth-child*/
+.slider input:nth-child(1):checked ~ .buttons label:nth-child(1), /*Cuando seleccione el primer botón <input> se le aplique la propiedad que tiene <label> primer botón*/
+.slider input:nth-child(2):checked ~ .buttons label:nth-child(2), /*Cuando seleccione el segundo botón <input> se le aplique la propiedad que tiene <label> segundo botón*/
+.slider input:nth-child(3):checked ~ .buttons label:nth-child(3)  /*Cuando seleccione el tercer botón <input> se le aplique la propiedad que tiene <label> tercer botón*/  /*Cuando seleccione el cuarto botón <input> se le aplique la propiedad que tiene <label> cuarto botón*/
+{ 
+  /*Apariencia que tendrá al ser seleccionado*/
+  opacity: 1; /*Cuando esté seleccionado*/
+  scroll-margin: 1.2; /*Misma escala asignada para hover*/ 
+  width: 55px; /*Ancho de botón*/ 
+}
+/*CONTENIDO de cada Slide con elemento <div>, de class "content"*/
+.content{
+  position: relative; /*Posición dentro del área del container*/
+  width: 400vw; /*Porque son 4 slides, y cada uno ocupará el ancho en el viewport(vw)*/
+  display: flex; /*Contenedor para poder posicionar cada Slide*/
+  transition: 400ms ease-in-out; /*Para efecto hover creado a continuación: */ /*ease-in-out para que el efecto se haga de forma fluida*/
+}
+/*Efecto hover para cada Slide*/
+.primerSlide, .segundoSlide, .tercerSlide{
+  position: relative; /*Posición dentro del área del container*/
+  width: 100vw; /*El ancho en el viewport(vw)*/
+  height: 60vh; /*El alto en el viewport(vh)*/
+  display: flex; /*Contenedor para poder posicionar los Slides-elementos-imgs*/
+  justify-content: center;
+  align-items: center;
+
+  /*background-size: cover; /* Ajusta el tamaño de la imagen */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita la repetición de la imagen */
+}
+/*Ajuste del ancho de la imagen en cada slide, con elemento <img> de cada class xSlide*/
+.primerSlide img, .segundoSlide img, .tercerSlide img{
+  width: 82%; /* Hacer que la imagen ocupe el 82% del ancho del contenedor */
+  height: 75%; /* Mantener la proporción original de la imagen */
+  max-width: 100%; /* Asegurar que la imagen no supere su tamaño original */
+}
+/*Darle vida a cada Slide (¿qué contendrán?)--> IMÁGENES*/
+  /*ACCIÓN: Cuando de click a un botón, cambie la imagen*/
+    /* .content tiene los tres Slides (uno al lado del otro)*/
+.slider input:nth-child(1):checked ~ .content{ 
+  left: 0; /*Que se quede ahí (pos inicial)*/
+}
+.slider input:nth-child(2):checked ~ .content{
+  left: -100vw; /*Reste el ancho del viewport(vw) que tiene el primerSlide --> igual a 0 (pos inicial)*/
+}
+.slider input:nth-child(3):checked ~ .content{
+  left: -200vw; /*Reste el ancho del viewport(vw) que tiene el segundoSlide --> igual a 0 (pos inicial)*/
+}
+/*Agregar texto descriptivo dentro de cada imagen del Carrusel, utilizando elemento <p> de cada class xSlide*/
+.primerSlide p, .segundoSlide p, .tercerSlide p{
+    position: absolute; /* Posiciona el texto de manera absoluta (dentro del área del contenedor imgs) */
+    bottom: 190px; /* Ajusta la distancia desde la parte inferior */
+    left: 25%; /* Centra horizontalmente el texto */
+    transform: translateX(-45%); /* Centra horizontalmente el texto */
+    color: #000; /* Color del texto */
+    text-align: justify; /* Alineación del texto */
+    font-size: 18px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/*Agregar color a algunas palabras del texto descriptivo de cada imagen, utilizando elemento <span> de cada class xSlide*/
+.primerSlide span{
+    color: #5f4ba7
+}
+.segundoSlide span{
+  color:#616161a3
+}
+.tercerSlide span{
+  color: #74B72E;
+}
+/*Propiedades de las flechas */
+.flecha {
+  position: absolute; /* Posiciona las flechas de manera absoluta (dentro del área del contenedor gral) */
+  top: 50%; /*Altura desde la parte inferior*/
+  transform: translateY(-50%); /*Centra verticalmente las flechas*/
+  font-size: 70px; /*Tamaño flechas*/
+  color: #000;
+  cursor: pointer;
+}
+/*Distancia entre las felchas (izq y derecha)*/
+.left {
+  left: 155px;
+}
+.right {
+  right: 155px;
+}
+
+
+/* (2) CONTENEDOR PADRE: IMAGEN CELULAR Y DESCRIPCIÓN*/
+/*CONTENEDOR IMAGEN CELULAR*/
+/*id (IDENTIFICADOR) Celular*/
+#Celular{ /*Celular*/
+  height: 500px;
+}
+/*POSICIÓN-CONTENEDOR DE ELEMENTO div ("IMAGEN CELULAR")*/
+.celular-container{
+  display: flex;
+  align-items: center; /* Alineación vertical al centro */
+  padding: 10px; /* Margen interna */
+}
+/*POSICIÓN-CONTENEDOR DE ELEMENTO div ("DESCRIPCIÓN DEL CELULAR")*/
+.description-celular{
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Alineación vertical al centro */
+  padding: 10px; /* Margen interna */
+  font-size: 19px; font-family: 'Cambria', sans-serif;
+  font-weight: bold; /*Texto en negrita*/
+  text-align: center; /* Justificar el texto al borde (alinearlo-como lo haría en Word)*/
+}
+/*Agregar color a algunas palabras del texto descriptivo, utilizando elemento <span> de class "description-celular"*/
+.description-celular span{
+  color: #fff;
+}
+/*(1) CONTENEDOR PADRE: envuelve la imagen celular y el texto-descripción del Celular */
+.celular-and-description-container {
+  display: flex;
+  justify-content: space-between; /* Alineación horizontal al espacio entre los elementos */
+  flex-direction: row;
+  margin: 30px 320px; /* Margen externo del contenedor 20px arriba y abajo, 300px izquierda y derecha */
+  gap: 10px; /*Distancia entre texto e imagen*/
+}
+
+/* (3) CONTENEDOR PADRE: IMAGEN PERSONALIZACIÓN Y DESCRIPCIÓN*/
+/*CONTENEDOR IMAGEN PERSONALIZACIÓN*/
+/*id (IDENTIFICADOR) Personalizacion*/
+#Personalizacion{ /*Personalizacion*/
+  height: 410px;
+  width: 640px;
+  border-radius: 37px;
+}
+/*POSICIÓN-CONTENEDOR DE ELEMENTO div ("IMAGEN PERSONALIZACIÓN")*/
+.personalizacion-container{
+  display: flex;
+  align-items: center; /* Alineación vertical al centro */
+  padding: 10px; /* Margen interna */
+  margin: 130px;
+}
+/*POSICIÓN-CONTENEDOR DE ELEMENTO div ("DESCRIPCIÓN DE IMG PERSONALIZACIÓN")*/
+.description-personalizacion{
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Alineación vertical al centro */
+  padding: 5px; /* Margen interna */
+  margin: 130px;
+  font-size: 19px; font-family: 'Cambria', sans-serif;
+  font-weight: bold; /*Texto en negrita*/
+  text-align: justify; /* Justificar el texto al borde (alinearlo-como lo haría en Word)*/
+}
+/*Agregar color a algunas palabras del texto descriptivo, utilizando elemento <span> de class "description-celular"*/
+.description-personalizacion span{
+  color: #fff;
+}
+/*(3) CONTENEDOR PADRE: envuelve la imagen celular y el texto-descripción del Celular */
+.personalizacion-and-description-container {
+  display: flex;
+  justify-content: space-between; /* Alineación horizontal al espacio entre los elementos */
+  flex-direction: row-reverse;
+  margin: 10px 0px; /* Margen externo del contenedor 10px arriba y abajo, 0px izquierda y derecha */
+  gap: 0px; /*Distancia entre texto e imagen*/
+  width: 100%;
+  height: 67vh; /*establece la altura mínima del cuerpo en el 67% del alto de la ventana del navegador (viewport height), lo que establece que se utilizará un espacio del 67% para el carrusel*/
+  background: rgb(224,224,224);
+background: linear-gradient(180deg, rgba(224, 224, 224, 0.476) 0%, rgba(131, 131, 131, 0.493) 100%);  
+}
+
+
+/* (4) CONTENEDOR PADRE: IMAGEN CARCASA Y DESCRIPCIÓN */
+/*CONTENEDOR IMAGEN CARCASA*/
+/*id (IDENTIFICADOR) Carcasa*/
+#Carcasa{
+  height: 410px;
+  width: 640px;
+  border-radius: 37px;
+}
+/*POSICIÓN-CONTENEDOR DE ELEMENTO div ("IMAGEN CARCASA")*/
+.carcasa-container{
+  display: flex;
+  align-items: center; /* Alineación vertical al centro */
+  padding: 5px; /* Margen interna */
+  margin: 130px;
+}
+/*POSICIÓN-CONTENEDOR DE ELEMENTO div ("DESCRIPCIÓN DE IMG CARCASA")*/
+.description-carcasa{
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Alineación vertical al centro */
+  padding: 5px; /* Margen interna */
+  margin: 130px;
+  font-size: 19px; font-family: 'Cambria', sans-serif;
+  font-weight: bold; /*Texto en negrita*/
+  text-align: justify; /* Justificar el texto al borde (alinearlo-como lo haría en Word)*/
+}
+/*Agregar color a algunas palabras del texto descriptivo, utilizando elemento <span> de class "description-carcasa"*/
+.description-carcasa span{
+  color: #fff;
+}
+/*(4) CONTENEDOR PADRE: envuelve la imagen Carcasa y el texto-descripción de img Carcasa */
+.carcasa-and-description-container {
+  display: flex;
+  justify-content: space-between; /* Alineación horizontal al espacio entre los elementos */
+  flex-direction: row;
+  margin: 10px 0px; /* Margen externo del contenedor 10px arriba y abajo, 0px izquierda y derecha */
+  gap: 0px; /*Distancia entre texto e imagen*/
+  width: 100%;
+  height: 67vh; /*establece la altura mínima del cuerpo en el 67% del alto de la ventana del navegador (viewport height), lo que establece que se utilizará un espacio del 67% para el carrusel*/  
+}
+
+
+/* (5) CONTENEDOR PADRE: IMAGEN PANEL Y DESCRIPCIÓN */
+/*CONTENEDOR IMAGEN PANEL*/
+/*id (IDENTIFICADOR) PanelS*/
+#PanelS{
+  height: 410px;
+  width: 640px;
+  border-radius: 37px;
+}
+/*POSICIÓN-CONTENEDOR DE ELEMENTO div ("IMAGEN PANEL")*/
+.panelS-container{
+  display: flex;
+  align-items: center; /* Alineación vertical al centro */
+  padding: 10px; /* Margen interna */
+  margin: 130px;
+}
+/*POSICIÓN-CONTENEDOR DE ELEMENTO div ("DESCRIPCIÓN DE IMG PANEL")*/
+.description-panelS{
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Alineación vertical al centro */
+  padding: 5px; /* Margen interna */
+  margin: 130px;
+  font-size: 19px; font-family: 'Cambria', sans-serif;
+  font-weight: bold; /*Texto en negrita*/
+  text-align: justify; /* Justificar el texto al borde (alinearlo-como lo haría en Word)*/
+}
+/*Agregar color a algunas palabras del texto descriptivo, utilizando elemento <span> de class "description-panelS"*/
+.description-panelS span{
+  color: #fff;
+}
+/*(5) CONTENEDOR PADRE: envuelve la imagen PanelS y el texto-descripción de img PanelS */
+.panelS-and-description-container {
+  display: flex;
+  justify-content: space-between; /* Alineación horizontal al espacio entre los elementos */
+  flex-direction: row-reverse;
+  margin: 10px 0px; /* Margen externo del contenedor 10px arriba y abajo, 0px izquierda y derecha */
+  gap: 0px; /*Distancia entre texto e imagen*/
+  width: 100%;
+  height: 67vh; /*establece la altura mínima del cuerpo en el 67% del alto de la ventana del navegador (viewport height), lo que establece que se utilizará un espacio del 67% para el carrusel*/
+  background: rgb(224,224,224);
+background: linear-gradient(180deg, rgba(224, 224, 224, 0.476) 0%, rgba(131, 131, 131, 0.493) 100%);  
+}
+
+/*FOOTER (PIE DE PÁGINA) FINAL*/
+footer {
+  text-align: center;
+  background-color: rgb(10, 48, 13); /*#123c14;*/ /*#002E10   #0c310f*/
+  color: #fff;
+  padding: 30px; /*Margen interna*/
+  font-size: 17px; font-family: Arial, sans-serif;
+}
+
+/*(6) CONTENEDOR "CUADRO DE COOKIES"*/
+/*Contenedor padre*/
+#cookie-container {
+  display: none;
+  position: fixed; /*Posición fija*/
+  bottom: 10px; /*Margen desde parte inferior*/
+  right: 10px;
+}
+/*Contenedor gral de texto y botón */
+.cookie-content {
+  display: flex;
+  flex-direction: column; /* Cambia la dirección del diseño a columna */
+  align-items: flex-end; /* Alinea los elementos al final (derecha) */
+  background-color: #a0ffc0; /* Color fondo contenedor */
+  color: #000000; /* Color texto */
+  font-size:15px; font-family: Tahoma, sans-serif;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+/*Botón ¡Listo!*/
+#cookie-button {
+  margin-top: 10px; /* Agrega margen superior al botón */
+  background-color: #fff; /* Color texto */
+  color: #0a6d29; /* Color texto */
+  border: none;
+  padding: 8px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size:15px; font-family: Tahoma, sans-serif;
+}
+
+
+
+/*INDEX mediaQueryes para dispositivos móviles*/
+/*PRIMER BREAK POINT (MENÚ HAMBURGUESA): A partir de los 885px del ancho wiewport, hacia abajo*/
+@media  screen and (max-width: 885px){
+  /*Posición Contenedor botón menú hamburguesa "hamburguesa-container"*/
+  .hamburguesa-container{
+    width: 5%;  /*Ancho del elemento en el contenedor*/
+    margin: 0 auto; /* Centra el contenedor */
+    box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+    display: flex;
+    justify-content: center;
+  }
+  /*Diseño del Contenedor "hamburguesa-container"*/
+  .hamburguesa-container button{
+    padding: 5px 10px; /* Espaciado interno del botón */
+    border: none; /* Elimina el borde del botón predeterminado */
+    border-radius: 5px; /* Borde redondo */
+    background-color: transparent; /* Color de fondo */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.6s; /* Agrega una transición suave al color de fondo */
+  }
+  /* Efecto cambia color al pasar el cursor por botón */
+  .hamburguesa-container:hover button {
+    background-color: #0593726c; /* Color de fondo al pasar el cursor */
+  }
+  /*Tamaño del botón (ícono), del Contenedor "hamburguesa-container"*/
+  .hamburguesa-icon{
+    font-size: 20px; /*Propiedad adecuada para fuente de íconos*/
+  }
+  /*Diseño del Contenedor PADRE navbar_fueraheader*/
+  .navbar_fueraheader{
+    font-family: 'Poppins', sans-serif;
+    display: block; /*(Puedo mover) a nivel de bloque*/
+    align-items: center;
+    max-height: 50px; /*max altura del navbar_fueraheader*/
+    padding-bottom: 175px; /*Margen interna - altura desde parte inferior*/
+  }
+  /*CONTENEDOR INDIVIDUAL Fondo Inicio <li>*/
+  .fondoInicio { 
+    background-color: #e0e0e05c; /*#674baf5e;*/
+    cursor: pointer;
+    transition: background-color 2s; /* Ajusta la duración de la transición */
+  }
+  /*Efecto cambio de color Fondo Inicio <li> al pasar el cursor por encima */
+  .fondoInicio:hover {
+    background-color: #57235497; /*#35265cc6*/
+  }
+  /*CONTENEDOR INDIVIDUAL Fondo Tienda <li>*/
+  .fondoTienda { 
+    background-color: #e0e0e05c; /*#674baf5e;*/
+    cursor: pointer;
+    transition: background-color 2s; /* Ajusta la duración de la transición */
+  }
+  /*Efecto cambio de color Fondo Tienda <li> al pasar el cursor por encima */
+  .fondoTienda:hover {
+    background-color: #57235497; /*#35265cc6*/
+  }
+  /*CONTENEDOR INDIVIDUAL Fondo Guías <li>*/
+  .fondoGuias { 
+    background-color: #e0e0e05c; /*#674baf5e;*/
+    cursor: pointer;
+    transition: background-color 2s; /* Ajusta la duración de la transición */
+  }
+  /*Efecto cambio de color Fondo Guías <li> al pasar el cursor por encima */
+  .fondoGuias:hover {
+    background-color: #57235497; /*#35265cc6*/
+  }
+  /*CONTENEDOR INDIVIDUAL Fondo Soporte <li>*/
+  .fondoSoporte { 
+    background-color: #e0e0e05c; /*#674baf5e;*/
+    cursor: pointer;
+    transition: background-color 2s; /* Ajusta la duración de la transición */
+  }
+  /*Efecto cambio de color Fondo Guías <li> al pasar el cursor por encima */
+  .fondoSoporte:hover {
+    background-color: #57235497; /*#35265cc6*/
+  }
+  /*CONTENEDOR INDIVIDUAL Fondo Contáctanos <li>*/
+  .fondoContactanos { 
+    background-color: #e0e0e05c; /*#674baf5e;*/
+    cursor: pointer;
+    transition: background-color 2s; /* Ajusta la duración de la transición */
+  }
+  /*Efecto cambio de color Fondo Contactanos <li> al pasar el cursor por encima */
+  .fondoContactanos:hover {
+    background-color: #57235497; /*#35265cc6*/
+  }
+  /*Posición de los botones del Contenedor "navbar_fueraheader"*/
+  .navbar_fueraheader li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6px -45px; /*Margen externa. / derecha -40px*/
+    padding: 11px;
+  }
+  /*Trabajando con el texto*/
+  .navbar_fueraheader li a{
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    font-weight: bold; /* Texto en negrita */
+    color: #fff; /* Color del texto */
+  }
+}
+
+
+
+

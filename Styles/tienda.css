@@ -1,0 +1,166 @@
+/*____________SECCIÓN "TIENDA"_____________*/
+
+/*Botón de menú hamburguesa*/
+.hamburguesa-container{
+    display: none; /* Inicialmente oculta el icono del botón-menú para escritorio, más abajo tendrá mediaQueryes y aparecerá para dispositivos móviles*/
+}
+  
+/*Menú desplegable navbar_fueraheader */
+.navbar_fueraheader{
+    display: none; /* Inicialmente oculta menú para escritorio, más abajo tendrá mediaQueryes y aparecerá para dispositivos móviles*/
+}
+
+
+/*ESTRUCTURA SECCIÓN TIENDA*/
+
+/* (1) CONTENEDOR DE ELEMENTO div ("CARRITO Y BARRA DE BÚSQUEDA")*/
+/*Dimensiones de imagen carro*/
+#aspectCarro{
+    height: 70px;
+    cursor: pointer;
+}
+/*Texto "Añade al carrito"*/
+.carro-search-container p{
+    display: flex;
+    margin: 0px -535px; /*Espacio externo arriba-abajo 0px y derecha-izquierda -535px*/
+    font-size: 15px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /*'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;*/
+}
+/*Barra de búsqueda y carrito*/
+.carro-search-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 36%; /*Espacio entre elementos*/
+    margin: 0px 0px; /*Margen externa*/
+    background-color: #eee;
+}
+/*Espacio Formulario (barra de búsqueda): entre espacio-entrada de texto y el espacio para dar click "Buscar"*/
+.carro-search-container form {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+/*Espacio-entrada de texto input "¿Qué buscas?"*/
+.carro-search-container input[type="text"] {
+    border: 1px solid #000; /*Borde de espacio-entrada de texto*/
+    padding: 0.4rem; /*Margen interna de la entrada de texto*/
+    font-size: 1rem; /*Tamaño de la entrada de texto*/
+    font-size: 15px; font-family: Tahoma, sans-serif;
+}
+/*Espacio para dar click submit "Buscar"*/
+.carro-search-container input[type="submit"] {
+    background-color: #000;
+    color: #fff; /*Color del texto "Buscar"*/
+    border: none; /*Que no tenga borde el input submit*/
+    padding: 0.5rem 10px; /*Margen interna arriba-abajo 0.5rem y derecha-izquierda 10px*/
+    font-size: 1rem; /*Tamaño input submit*/
+    cursor: pointer;
+    font-size: 15px; font-family: Tahoma, sans-serif;
+}
+
+/* ESTRUCTURA SECCIÓN ("JARDIGNOMO/MÓDULOS  TIENDA DE AUXILIARES")*/
+/* (2) CONTENEDOR PARA EL FONDO*/
+.fondo-adicional {
+    background-color: #eee; /* Color de fondo adicional */
+    padding: 20px; /* Espaciado interno del fondo adicional */
+}
+/*(3) CONTENEDOR TITULOS ("JARDIGNOMO/MÓDULOS  TIENDA DE AUXILIARES")*/
+/*Posición de cada título*/
+#titulo1{
+    display: flex;
+    align-items: center;
+    font-size: 40px; font-family: Tahoma, sans-serif;
+   
+}
+#titulo2{
+    display: flex;
+    align-items:center;
+    font-size: 40px; font-family: Tahoma, sans-serif;
+}
+/*Posición de los dos títulos en conjunto "Jardignomo/Módulos y Tienda de auxiliares"*/
+.titulosPadre-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 10px;
+    margin-top: -30px; /*Margen externa superior (negativa para que suba el texto)*/
+    gap: 115px;
+}
+
+/* (4) CONTENEDOR DE ELEMENTO div ("CONTENEDOR DE IMÁGENES "JARDIGNOMO/MÓDULOS  TIENDA DE AUXILIARES")*/
+/*Posición de las dos imgs "Jardignomo/Modulos" y "Tienda de auxiliares"*/
+.imagen-container {
+    position: relative; /*Posicionamiento del elemento "img", con respecto a su posición normal en el flujo del doc*/
+}
+/*Dimensiones de las dos imgs "Jardignomo/Modulos" y "Tienda de auxiliares"*/
+#Jardignomo-Modulos, #Tienda_aux{
+    height: 370px;
+    width: 445px; /* Esto mantiene la proporción original */
+    cursor: pointer;
+    border-radius: 3%;
+    opacity: 1; /*Color original al pasar el cursor (completamente opaca) */ 
+    transform: opacity 0.7s ease, transform 0.5s ease; /*Agrega una transición suave al pasar el cursor aplicando efecto hover de: opacidad y rotación (rotate)*/
+}
+/*Ajuste dimensiones de imagen "Tienda de auxiliares"*/
+#Tienda_aux {
+    width: 428px;
+}
+/*Efecto hover: trasparencia color de imágenes al pasar el cursor*/
+#Jardignomo-Modulos:hover, #Tienda_aux:hover {
+    opacity: 0.1; /*Trasparencia: entre 0 (completamente transparente) y 1 (completamente opaca) */
+    transform: rotate(-4deg) scale(0.9); /* Giro de 45 grados al pasar el cursor, y escala */
+}
+/*Contenedor padre de las dos imágenenes (Jardignomo/Módulos y Tienda de auxiliares)*/
+.imagenesPadre-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-bottom: 15px; /*Margen externa desde parte inferior*/
+}
+/*Texto descriptivo sobre la imagen (al pasar el cursor)*/
+.imagen-texto {
+    position: absolute; /*Posicionamiento del elemento "el texto descriptivo", conforme al posicionamiento de su contenedor ancestro"imagenesPadre-container"*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*Traslada el texto al centro (X e Y). Se centrará conforme al posicionamiento de su contenedor ancestro "imagenesPadre-container"*/
+    color: rgb(0, 110, 0);
+    font-weight: 600; /*Tamaño-grosor texto*/
+    font-size: 18px;
+    pointer-events: none; /* Permite hacer clic a través del texto */
+    opacity: 0; /*Trasparencia inicial del texto*/
+    transition: opacity 0.5s ease; /* Agrega transición suave para efecto hover de opacidad (para el texto)*/
+}
+/*Muestra el texto al pasar el cursor sobre la imagen */
+.imagen-container:hover .imagen-texto {
+    opacity: 1; /*Trasparencia final-opaca-->texto color origin*/
+}
+/*Aspecto del texto descriptivo (texto de la imagen)*/
+.imagen-texto{
+    font-size: 18px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align:center;
+}
+
+
+/*FOOTER (PIE DE PÁGINA) FINAL*/
+footer {
+    text-align: center;
+    background-color: rgb(10, 48, 13); /*#123c14;*/ /*#002E10   #0c310f*/
+    color: #fff;
+    padding: 30px; /*Margen interna*/
+    font-size: 17px; font-family: Arial, sans-serif;
+  }
+
+
+
+
+  /*TIENDA mediaQueryes para dispositivos móviles*/
+/*PRIMER BREAK POINT (MENÚ HAMBURGUESA): A partir de los 885px del ancho wiewport, hacia abajo*/
+
+
+
+
+
+

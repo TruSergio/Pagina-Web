@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Garantizar correcta escala en apps móviles-->
+    <title>Jardignomo - Tu asistente de Jardín Inteligente</title>
+    <link rel="stylesheet" href="/Styles/index.css"> <!--Sección (index)-->
+    <link rel="stylesheet" href="/Styles/Auxiliares/macetas_decora.css"> <!--Sección interna (macetas_decora)-->
+
+</head>
+<body>
+    <!--CONTENEDOR LOGOS, NAVBAR-MENÚ E INICIAR SESIÓN/REGÍSTRATE-->
+    <header>
+        <div class="logo-container_uno">
+            <div><img id="Logo1" src="/Imagenes/index/LOGO PRODUCT.png" alt="Logo"></div>
+        </div>
+
+        <!--Botón de menú hamburguesa-->
+        <div class="hamburguesa-container">
+            <button class="hamburguesa-icon" onclick="despliegueMenu()">&#9776;</button> <!--onclick servirá para hacer visible el despliegue (con JS)-->
+        </div>
+        
+        <ul class="navbar"> <!--<ul> es una lista que contendrá elementos <li> -->
+            <li><a href="/index.html">Inicio</a></li> <!-- Cada elemento de la lista es un botón de navegación -->
+            <li><a href="/tienda.html">Tienda</a></li>
+            <li><a href="/guias">Guías</a></li>
+            <li><a href="/soporte.html">Soporte</a></li>
+            <li><a href="/contactanos.html">Contáctanos</a></li>
+        </ul>
+
+        <div class="button-container">
+            <a href="/iniciar_sesion.html"><button>Iniciar Sesión</button></a>
+            <a href="/registrate.html"><button id="Fijo">Regístrate</button></a>
+        </div>  
+    
+        <div class="logo-container_dos">
+            <div><img id="Logo2" src="/Imagenes/index/LOGO EMPRESA.png" alt="Logo"></div>
+        </div>
+    </header>
+
+
+<!--NAVBAR-MENÚ FUERA DEL <header> --Útil para visualizar su despliegue de las Secciones en dispositivos móviles-->
+    <ul class="navbar_fueraheader"> <!--<ul> es una lista que contendrá elementos <li> -->
+        <!--Usuario tiene posibilidad de elegir dar click en área de fondo-color ó en palabra Inicio/Tienda/Guías/Contáctanos-->
+        <li class="fondoInicio" onclick="redirect('/index.html')"><a href="/index.html">Inicio</a></li>
+        <li class="fondoTienda" onclick="redirect('/tienda.html')"><a href="/tienda.html">Tienda</a></li>
+        <li class="fondoGuias" onclick="redirect('/guias.html')"><a href="/guias.html">Guías</a></li>
+        <li class="fondoSoporte" onclick="redirect('/soporte.html')"><a href="/soporte.html">Soporte</a></li>
+        <li class="fondoContactanos" onclick="redirect('/contactanos.html')"><a href="/contactanos.html">Contáctanos</a></li>
+    </ul>
+    <!--JS para dirigir a usuario a tal Sección cuando haga click en su respectivo "fondo"-->
+    <script>
+    // Definición de la función redirect con un parámetro (destino) --> !!!!!!!!OJO Debo definir cada una function redirect(respectivaSección)
+    function redirect(indexhtml) {
+        // Utiliza window.location.href para redirigir al usuario a la ubicación especificada
+        window.location.href = indexhtml;
+        }
+        function redirect(tiendahtml){
+            window.location.href = tiendahtml;
+        }
+        function redirect(guiashtml){
+            window.location.href = guiashtml;
+        }
+        function redirect(soportehtml){
+            window.location.href = soportehtml;
+        }
+        function redirect(contactanoshtml){
+            window.location.href = contactanoshtml;
+        }
+        </script>
+    
+    <!--JS para desplegar el navbar-menú al dar click en botón menú hamburguesa-->  
+    <script>
+    function despliegueMenu() {
+        var navbar = document.querySelector('.navbar_fueraheader');
+        navbar.style.display = (navbar.style.display === 'none' || navbar.style.display === '') ? 'block' : 'none';
+        }
+        </script>
+
+<!-- (2) CONTENEDOR PARA EL FONDO-->
+<div class="fondo-adicional">
+    <!--(3) CONTENEDOR DE TITULO "SEMILLAS"-->
+    <div class="titulo">
+        <h1 id="semillas">Macetas y otras decoraciones</h1>
+    </div>
+    <!--(4) CONTENEDOR DE "SUBTITULO" -->
+    <div class="subtitulo">
+        <h3 id="descripcion"><span class="color">En el momento no tenemos disponibles estos productos, pero puedes adquirir otros más en la sección de Tienda.</span></h3>
+    </div>
+</div>
+
+
+<!--FOOTER (PIE DE PÁGINA) FINAL-->
+<footer>
+    <p>&copy; 2023 EkoTek. Todos los derechos reservados. EkoTek y Jardignomo son marcas comerciales, marcas de servicios o marcas registradas de EkoTek.</p>
+</footer>
+
+</body>
+</html>

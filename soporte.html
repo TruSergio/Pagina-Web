@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Garantizar correcta escala en apps móviles-->
+    <title>Jardignomo - Tu asistente de Jardín Inteligente</title>
+    <link rel="stylesheet" href="/Styles/index.css"> <!--Sección (index)-->
+    <link rel="stylesheet" href="/Styles/soporte.css"> <!--Sección (Soporte)-->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" /> <!--Ícono de flecha (Google Fonts) para menú desplegable-->
+
+</head>
+<body>
+    <!--CONTENEDOR LOGOS, NAVBAR-MENÚ E INICIAR SESIÓN/REGÍSTRATE-->
+    <header>
+        <div class="logo-container_uno">
+            <div><img id="Logo1" src="/Imagenes/index/LOGO PRODUCT.png" alt="Logo"></div>
+        </div>
+
+        <!--Botón de menú hamburguesa-->
+        <div class="hamburguesa-container">
+            <button class="hamburguesa-icon" onclick="despliegueMenu()">&#9776;</button> <!--onclick servirá para hacer visible el despliegue (con JS)-->
+        </div>
+        
+        <ul class="navbar"> <!--<ul> es una lista que contendrá elementos <li> -->
+            <li><a href="/index.html">Inicio</a></li> <!-- Cada elemento de la lista es un botón de navegación -->
+            <li><a href="/tienda.html">Tienda</a></li>
+            <li><a href="/guias.html">Guías</a></li>
+            <li><a href="/soporte.html">Soporte</a></li>
+            <li><a href="/contactanos.html">Contáctanos</a></li>
+        </ul>
+
+        <div class="button-container">
+            <a href="/iniciar_sesion.html"><button>Iniciar Sesión</button></a>
+            <a href="/registrate.html"><button id="Fijo">Regístrate</button></a>
+        </div>  
+    
+        <div class="logo-container_dos">
+            <div><img id="Logo2" src="/Imagenes/index/LOGO EMPRESA.png" alt="Logo"></div>
+        </div>
+    </header>
+
+
+<!--NAVBAR-MENÚ FUERA DEL <header> --Útil para visualizar su despliegue de las Secciones en dispositivos móviles-->
+    <ul class="navbar_fueraheader"> <!--<ul> es una lista que contendrá elementos <li> -->
+        <!--Usuario tiene posibilidad de elegir dar click en área de fondo-color ó en palabra Inicio/Tienda/Guías/Contáctanos-->
+        <li class="fondoInicio" onclick="redirect('/index.html')"><a href="/index.html">Inicio</a></li>
+        <li class="fondoTienda" onclick="redirect('/tienda.html')"><a href="/tienda.html">Tienda</a></li>
+        <li class="fondoGuias" onclick="redirect('/guias.html')"><a href="/guias.html">Guías</a></li>
+        <li class="fondoSoporte" onclick="redirect('/soporte.html')"><a href="/soporte.html">Soporte</a></li>
+        <li class="fondoContactanos" onclick="redirect('/contactanos.html')"><a href="/contactanos.html">Contáctanos</a></li>
+    </ul>
+    <!--JS para dirigir a usuario a tal Sección cuando haga click en su respectivo "fondo"-->
+    <script>
+    // Definición de la función redirect con un parámetro (destino) --> !!!!!!!!OJO Debo definir cada una function redirect(respectivaSección)
+    function redirect(indexhtml) {
+        // Utiliza window.location.href para redirigir al usuario a la ubicación especificada
+        window.location.href = indexhtml;
+        }
+        function redirect(tiendahtml){
+            window.location.href = tiendahtml;
+        }
+        function redirect(guiashtml){
+            window.location.href = guiashtml;
+        }
+        function redirect(soportehtml){
+            window.location.href = soportehtml;
+        }
+        function redirect(contactanoshtml){
+            window.location.href = contactanoshtml;
+        }
+        </script>
+    
+    <!--JS para desplegar el navbar-menú al dar click en botón menú hamburguesa-->  
+    <script>
+    function despliegueMenu() {
+        var navbar = document.querySelector('.navbar_fueraheader');
+        navbar.style.display = (navbar.style.display === 'none' || navbar.style.display === '') ? 'block' : 'none';
+        }
+        </script>
+
+
+<!-- (1) CONTENEDOR PARA EL FONDO-->
+<div class="fondo-adicional">
+    <!--(2) CONTENEDOR DE TITULO "GUIAS"-->
+    <div class="tituloPadre-container">
+        <h1 id="titulo1">¿Tienes algún problema?</h1>
+    </div>
+    <!--(3) CONTENEDOR DE "BARRA DE BÚSQUEDA"-->
+    <div class="search-container">
+        <!--Formulario (barra de búsqueda)-->
+        <form action="/search"> <!--Ruta a dirigir cuando se presione 'Buscar'-->
+            <input type="text" name="q" placeholder="¿Qué buscas?"> <!--Espacio-entrada de texto input-->
+            <input type="submit" value="Buscar"> <!--Espacio para dar click "Buscar"-->
+        </form>
+    </div>
+
+    <!--(5) CONTENEDOR GRAL-->
+    <div class="gral-container">
+        <!--(6) CONTENEDOR TITULO "PASO A PASO"-->
+        <div class="titulo">
+            <h1>Preguntas más frecuentes</h1>
+            <!--(7) DESCRIPCIÓN-->
+            <div class="descripcion">
+                <p><b>¿El Jardignomo tiene módulos de expansión?</b><br></p>
+                Si, Jardignomo cuenta con diversos módulos de expansión para personalizar la manera en que se puede usar, <br>desde sensores de humedad ambiental, como sensores de lluvia y de ph.<br><br>
+                <p><b>¿Cómo se instalan los módulos?</b><br></p>
+                Los módulos tienen un puerto designado según su tipo, y su conexión solo es posible a los puertos correctos.<br> Simplemente toma tu módulo e insértalo en el puerto cuya forma coincide.<br><br>
+                <p><b>¿El Jardignomo viene con todos los módulos?</b><br></p>
+                No, el paquete básico del Jardignomo incluye por defecto un sensor de humedad de suelo para su función<br> principal y un sensor de temperatura ambiente básico.<br> Para seleccionar módulos que se ajusten a tus necesidades, tendrás que añadirlos al realizar la compra.<br><br>
+                <p><b>Mi Jardignomo no enciende ¿Qué debo hacer?</b><br></p>
+                Asegúrese de que la batería esté cargada. De manera preventiva, antes de usar el Jardignomo, <br>conéctelo a un cargador micro usb de 5 voltios por un periodo de hora y media. <br>Si el Jardignomo no enciende luego de este tiempo, contáctenos.<br><br>
+                <p><b>¿Puede ser instalado en espacios exteriores?</b><br></p>
+                Si, el Jardignomo cuenta con un diseño pensado para evitar que el agua alcance sus componentes<br> electrónicos internos. Mientras esto significa que es resistente a la lluvia, <br>incluso en condiciones torrenciales, no es resistente a ser sumergido en agua.<br><br>
+                <p><b>Tengo X planta ¿El Jardignomo servirá para ella?</b><br></p>
+                El Jardignomo funciona basado en una colección de plantas que está en constante actualización. <br>Esta colección es llamada Compendio de Plantas el cual puedes consultar con antelación para verificar <br>si tu planta ya ha sido agregada, o contáctanos para solicitar su adición.<br><br>
+                <p><b>No me encuentro satisfecho/a con el Jardignomo¿Es posible un reembolso?</b><br></p>
+                Si, en caso de que el producto no satisfaga sus necesidades o no alcance sus expectativas, ofrecemos <br>un reembolso completo durante los primeros 30 días después de la compra.<br><br>
+                <p><b>¿Qué tipo de garantía tiene el Jardignomo?</b><br></p>
+                El Jardignomo tiene una garantía de 6 meses luego de su compra, solamente por defectos de fabricación. <br>En este caso, el producto será reemplazado por uno nuevo totalmente gratis.<br><br>
+                <p><b>¿La aplicación está disponible para cualquier dispositivo móvil?</b><br></p>
+                No, por el momento la aplicación solamente se encuentra disponible para Android en su versión 6.0 y<br> superior. Estamos trabajando para traer soporte a dispositivos iOS.<br><br>
+                <p><b>El Jardignomo se reinicia después de algunos segundos de encendido ¿A qué se debe esto?</b><br></p>
+                Hemos programado el firmware del Jardignomo para que se reinicie automáticamente si detecta un error <br>de lectura del módulo lector de temperatura y humedad ambiente, para proteger dicho módulo<br> ya que se puede calentar. Este tipo de errores suelen atribuirse a una mala conexión del sensor, <br>que se solucionan volviendo a conectar el mismo. Si el problema persiste, contáctenos.<br><br>
+                <p><b>¿Por qué las medidas del sensor de luz presentan inconsistencias?</b><br></p>
+                Por el momento, el módulo sensor de luz se encuentra en fase final de pruebas, por lo cual es normal que<br> presente ciertas inconsistencias. Estamos trabajando en actualizar constantemente nuestro firmware para <br>mejorar la precisión y consistencia de este sensor.<br><br>
+                <p><b>¿Por qué la aplicación reporta un error de encendido?</b><br></p>
+                Este error se presenta si el Jardignomo detecta un comportamiento anormal de los sensores, y aparece<br> para detener la lectura de datos y así proteger el procesador. Si usted recibe este error, contáctenos<br> para la revisión del dispositivo.<br>
+
+
+            
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+
+
+    
+</div>
+
+
+
+
+<!--FOOTER (PIE DE PÁGINA) FINAL-->
+<footer>
+    <p>&copy; 2023 EkoTek. Todos los derechos reservados. EkoTek y Jardignomo son marcas comerciales, marcas de servicios o marcas registradas de EkoTek.</p>
+</footer>
+
+</body>
+</html>

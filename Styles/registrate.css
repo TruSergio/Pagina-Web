@@ -1,0 +1,20 @@
+/*____________SECCIÓN "REGÍSTRATE"_____________*/
+
+/* Estilos específicos para la página registrate.html */
+body.registrate .button-container a:last-child {
+  display: none; /* Oculta el botón "Regístrate" */
+}
+
+/*Botón de menú hamburguesa*/
+.hamburguesa-container{
+  display: none; /* Inicialmente oculta el icono del botón-menú para escritorio, más abajo tendrá mediaQueryes y aparecerá para dispositivos móviles*/
+}
+
+/*Menú desplegable navbar_fueraheader */
+.navbar_fueraheader{
+  display: none; /* Inicialmente oculta menú para escritorio, más abajo tendrá mediaQueryes y aparecerá para dispositivos móviles*/
+}
+
+/*Tiene mismos estilos que iniciar_sesion.css
+-> ÚNICAMENTE con respecto a:
+  * ESTRUCTURA SECCIÓN INICIAR SESIÓN (formulario) y su FORM RESPONSIVE mediaQueryes para dispositivos móviles*/
